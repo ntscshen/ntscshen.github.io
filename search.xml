@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[test文件]]></title>
+      <url>%2F2016%2F11%2F25%2Ftest%E6%96%87%E4%BB%B6.html</url>
+      <content type="text"><![CDATA[[ ] sadfasdfa [ ] 123 [ ] 234 [ ] 345 [ ] 456 [ ] 567 [ ] 678 [ ] 4563 [ ] 45]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Mac上网络抓包Charles]]></title>
       <url>%2F2016%2F11%2F19%2FMac%E4%B8%8A%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85Charles.html</url>
       <content type="text"><![CDATA[抓包？就是将网络传输发送与接收的数据包进行截获、重发、编辑、转存等操作，也用来检查网络安全。抓包也经常被用来进行数据截取等。 为什么调试配置Host？ 我们知道在网络上访问网站，要首先通过DNS服务器把网络域名（www.XXXX.com）解析成61.XXX.XXX.XXX的IP地址后，我们的计算机才能访问。要是对于每个域名请求我们都要等待域名服务器解析后返回IP信息，这样访问网络的效率就会降低，而Hosts文件就能提高解析效率。 在很多单位的局域网中，会有服务器提供给用户使用。但由于局域网中一般很少架设DNS服务器，访问这些服务要输入难记的IP地址，对不少人来说相当麻烦。现在可以分别给这些服务器取个容易记住的名字，然后在Hosts中建立IP映射，这样以后访问的时候我们输入这个服务器的名字就行了。 对于Lotus的服务器和一些数据库服务器，在访问时如果直接输入IP地址那是不能访问的，只能输入服务器名才能访问。那么我们配置好Hosts文件，这样输入服务器名就能顺利连接了。 Charles Mac下常用的网络封包截取工具(免费30天 - 试用期过后建议购买正版) Charles通过将自己设置成系统的网络访问代理服务器，使得所有的网络访问请求都通过它来完成，从而实现了网络封包的截取和分析 Charles主要功能 截取Http和Https网络封包。 支持重发网络请求，方便前后端调试。 支持修改网络请求参数。 支持网络请求的截获并动态修改。 支持模拟满网速网络 安装步骤下载好Charles - 打开下载包( .dmg后缀的文件 )后将Charles拖到Application目录下即可。 启动Charles后、第一次Charles会请求您给它设置系统代理的权限。图例如下！ 源： 译： Firefox代理服务器配置 源： 译： 在Firefox中打开 https://addons.mozilla.org/zh-CN/firefox/addon/charles-proxy/ 源： 译： 这样在Firefox可以抓包Proxy -&gt; Mozilla Firefox Proxy 将Charles设置成系统代理Charles主界面 Structure：结构( 视图将网络请求按访问的域名分类 ) Sequence：先后次序( 视图将网络请求按访问的时间排序 ) 根据具体的需求在这两个视图之间来回切换、大多数情况下截获的请求会很多，Charles提供了一个简单Filter功能，可以输入关键字来快速筛选URL中带指定关键字的网络请求 对于具体的网络请求 若请求的内容是POST表单、Charles会自动将表单进行分项显示 若是JSON格式的内容、Charles会自动将JSON内容格式化 若是图片、Charles会显示出图片的预览 抓包工具之断点修改( 重点 ) 更改返回数据来测试临界情况：这种做法可以让一个前端开发人员独立完成测试而不用拉一个后端一起联调，并且各种特殊维度，临界点都可以独立完成。仅仅自己在青花瓷上改来改去就可以达到效果了。 在实际的工作中、你可以经常用来把某些值改为临界情况 - 以查看当前页面在处理这些临界状况收的反应、这样比(找后端联调\找临界点的测试账号)这些数据成本要低得多， 截获IPhone上的网络封包 Charles通常用来截获本地上的网络封包、当我们需要时、可以用来截取其他设备上的网络请求，如下 截取IPhone上的网络请求、首先打开Charles的代理功能Proxy -&gt; Proxy Settings填入代理端口8888 并勾选&quot;Enable transparent HTTP proxying&quot; 完成在Charles上的设置 在手机上&quot;设置&quot; -&gt; &quot;无线局域网&quot; 找到当前链接的WIFI名、点击右侧详情( 感叹号 )，在最底部找到HTTP代理、修改成手动 设置 - 无线局域网 服务器：当前Charles运行所在电脑的IP：系统偏好设置 -&gt; 网络 选中现在连着的网（大部分人应该都是WiFi吧） ​ 服务器 ： 电脑IP地址 ，端口号: 8888， 设置完成后、打开iphone上的任意与需要网络的软件、就可以在Charles上看到弹出如下信息,点击&quot;Allow&quot;即可完成设置 - 这是会有一大波抓包信息的展示 模拟慢速网络 在开发时、我们常常需要模拟慢网速或者高延迟的网络、以测试在移动网络下、开发的产品是否显示正常 在Charles菜单中，选择&quot;Proxy - Throttle Setting&quot;在之后弹出的对话框中、勾选上&quot;Enable Throttling&quot;,并且可以设置不同网速的类型如下 修改网络请求内容 有时候伪类调试服务器的接口、我们需要反复尝试不同的参数的网络请求，Charles可以很方便的提供网络请求的修改和重发功能、在网络请求上点击右键,选择&quot;Edit&quot;,即可编辑 我们可以修改请求的任何信息 URL地址 端口号 参数 等等 之后点击&quot;Execute&quot;即可发送该修改后的网络请求。Charles支持我们多次修改和发送该请求，这对于我们和服务器端调试接口非常方便]]></content>
