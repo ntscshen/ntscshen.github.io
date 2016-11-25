@@ -1,0 +1,1139 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="网页生成的过程、大致分成五步
+
+第一步到第三幕都非常快( 一刹那 )
+
+“生成布局” - flow - layout(布局) - Render Tree( 渲染树 )
+“绘制” - paint
+flow + paint = render(渲染)
+
+
+重排和重绘
+重绘：元素外观改变所触发的浏览器行为(visibility\outline\背景色)
+重排：渲染树重新计算
+
+
+“重绘”不一定”重排”
+“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="页面性能管理">
+<meta property="og:url" content="http://ntscshen.com/2016/09/01/页面性能管理.html">
+<meta property="og:site_name" content="ntscshen">
+<meta property="og:description" content="网页生成的过程、大致分成五步
+
+第一步到第三幕都非常快( 一刹那 )
+
+“生成布局” - flow - layout(布局) - Render Tree( 渲染树 )
+“绘制” - paint
+flow + paint = render(渲染)
+
+
+重排和重绘
+重绘：元素外观改变所触发的浏览器行为(visibility\outline\背景色)
+重排：渲染树重新计算
+
+
+“重绘”不一定”重排”
+“">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png">
+<meta property="og:updated_time" content="2016-09-01T06:57:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="页面性能管理">
+<meta name="twitter:description" content="网页生成的过程、大致分成五步
+
+第一步到第三幕都非常快( 一刹那 )
+
+“生成布局” - flow - layout(布局) - Render Tree( 渲染树 )
+“绘制” - paint
+flow + paint = render(渲染)
+
+
+重排和重绘
+重绘：元素外观改变所触发的浏览器行为(visibility\outline\背景色)
+重排：渲染树重新计算
+
+
+“重绘”不一定”重排”
+“">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'ntscshen'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ntscshen.com/2016/09/01/页面性能管理.html"/>
+
+
+
+
+
+  <title> 页面性能管理 | ntscshen </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?fe2281abdef5c9c6f06c91743671e4b5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ntscshen</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">日光之下並無新事 | Day Coding</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-hourglass-2"></i> <br />
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/eercast" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            聚焦
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2016/09/01/页面性能管理.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="ntscshen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="ntscshen">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="ntscshen" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                页面性能管理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-01T09:08:57+08:00">
+                2016-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/09/01/页面性能管理.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/01/页面性能管理.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/01/页面性能管理.html" class="leancloud_visitors" data-flag-title="页面性能管理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="网页生成的过程、大致分成五步"><a href="#网页生成的过程、大致分成五步" class="headerlink" title="网页生成的过程、大致分成五步"></a>网页生成的过程、大致分成五步</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" alt=""></p>
+<blockquote>
+<p>第一步到第三幕都非常快( 一刹那 )</p>
+<ul>
+<li>“生成布局” - flow - layout(布局) - Render Tree( 渲染树 )</li>
+<li>“绘制” - paint</li>
+<li>flow + paint = render(渲染)</li>
+</ul>
+</blockquote>
+<h3 id="重排和重绘"><a href="#重排和重绘" class="headerlink" title="重排和重绘"></a>重排和重绘</h3><ul>
+<li>重绘：元素外观改变所触发的浏览器行为(visibility\outline\背景色)</li>
+<li>重排：渲染树重新计算</li>
+</ul>
+<blockquote>
+<p>“重绘”不一定”重排”</p>
+<p>“重排”必定”重绘”</p>
+</blockquote>
+<p>从性能角度考虑</p>
+<ul>
+<li>经量不把 <code>读操作</code> 和  <code>写操作</code> 在一个里面</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line">div.style.left = div.offsetLeft + <span class="number">10</span> + <span class="string">"px"</span>;</div><div class="line"><span class="comment">// Good</span></div><div class="line"><span class="keyword">var</span> left = div.offsetLeft;</div><div class="line">div.style.left = left + <span class="number">10</span> + <span class="string">"px"</span>;</div></pre></td></tr></table></figure>
+<h2 id="一般规则如下"><a href="#一般规则如下" class="headerlink" title="一般规则如下"></a>一般规则如下</h2><ul>
+<li>样式表越简单、重排和重绘就会越快</li>
+<li>重排和重绘的DOM元素层级越高、成本就越高</li>
+<li>table元素的重排和重绘成本、高于div元素</li>
+</ul>
+<h2 id="提高性能的技巧"><a href="#提高性能的技巧" class="headerlink" title="提高性能的技巧"></a>提高性能的技巧</h2><ol>
+<li><p>读操作和写操作、应该放在一起( 不要在两个读操作之间、加入一个写操作 )</p>
+</li>
+<li><p>若某个样式是通过重排得到的、把结果缓存下来、避免下一次用到的时候、浏览器重排</p>
+<ol>
+<li>在需要经常获取那些引起浏览器重排的属性值时，要缓存到变量。</li>
+</ol>
+</li>
+<li><p>不要在JS里一条条的修改样式、要通过改变class或者csstext属性、一次性地改变样式</p>
+</li>
+<li><p>将元素设置<code>display: none</code>( 需要一次重排和重绘 )、然后对这个几点进行N+次操作、最后再回复显示( 需要一次重排和重绘 )、这样、使用<code>两次</code>重新渲染、取代可能的N+次的重新渲染</p>
+</li>
+<li><p>position属性为absolute或fixed的元素时候、重排的开销比较小、因为不用考虑它对其他元素的影响</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad   </span></div><div class="line"><span class="keyword">var</span> top = <span class="number">10</span>;   </div><div class="line">ele.style.left = left + <span class="string">"px"</span>;   </div><div class="line">ele.style.top = top + <span class="string">"px"</span>;   <span class="comment">// Good   </span></div><div class="line"><span class="keyword">var</span> top = <span class="number">10</span>,left = <span class="number">10</span>;   </div><div class="line">$(<span class="string">'ele'</span>).css(&#123;<span class="attr">left</span>: left,<span class="attr">top</span>: top&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="css的效率"><a href="#css的效率" class="headerlink" title="css的效率"></a>css的效率</h2><blockquote>
+<p>浏览器读取CSS选择器有一个很重要的原则，它们从右到左读取。这意味这像 <code>ul &gt; li a[title=&quot;home&quot;]</code>这样的选择器， <code>a[title=&quot;home&quot;]</code> 将是最先被读取的。</p>
+</blockquote>
+<ul>
+<li>ID是唯一的、所以不需要任何的标签进行修饰、这样只会让效率更低<code>ul#main{}</code></li>
+<li><strong>没有什么比用后代选择器更糟糕的做法了</strong> 后代选择器是css选择器里最昂贵的选择器</li>
+</ul>
+<h2 id="总结的优化技巧"><a href="#总结的优化技巧" class="headerlink" title="总结的优化技巧"></a>总结的优化技巧</h2><h4 id="CSS优化"><a href="#CSS优化" class="headerlink" title="CSS优化"></a>CSS优化</h4><ul>
+<li>CSS尽量避免使用后代选择器 - 使用子代选择器代替<code>没有比后代选择器跟糟糕的</code></li>
+<li>在书写CSS时、使用类选择器”代替”元素选择器<code>类选择器获取速度优于元素选择器</code></li>
+<li>样式表越简单、嵌套层级越小( 重排和重绘就会越快 ) <code>sass书写不大于三层</code></li>
+</ul>
+<h4 id="jQuery优化"><a href="#jQuery优化" class="headerlink" title="jQuery优化"></a>jQuery优化</h4><ul>
+<li><p>选择器优化</p>
+<ul>
+<li>尽可能使用ID选择器( 唯一的、最快的 )，因为jQuery源码中调用的是<code>document.getElementById()</code>、不要与其他选择器混搭</li>
+<li>class选择器次之<code>调用原生getElementByClassName()方法</code>、指定类选择器的上下文、以缩小选择范围(默认：document)<code>$(&#39;.class&#39;,&#39;#div1&#39;)</code>;</li>
+<li>多级查找中、选择器的子类越详细越好<code>$(&quot;.data li.li1&quot;)</code> </li>
+<li>$parent.find(‘p.child’) 最快查找子元素的方法<code>find()会调用原生的 getElementByTagName方法</code></li>
+<li>经可能的缓存<code>(缓存比不缓存快了2-3倍)</code> <code>为什么要缓存得到的变量？就是减少访问DOM接口</code></li>
+<li>使用链式写法、jQuery会自动缓存每一步的结果、链式比不链式写法快了25%左右</li>
+</ul>
+</li>
+<li><p>DOM优化</p>
+<ul>
+<li><p>如果对一个DOM进行大量处理操作、使用.detach()方法、取出 - 处理 - 插入、使用.detach()方法比不使用时，快了60%。<code>.detach(分离)</code></p>
+</li>
+<li><p><code>.detach()</code>移除被选元素，包括所有文本和子节点。这个方法会保留 jQuery 对象中的匹配的元素，因而可以在将来再使用这些匹配的元素。会保留所有绑定的事件、附加的数据。<code>主要为了处理元素的大量DOM操作而生</code></p>
+</li>
+<li><p>改动DOM结构、先把它们合并，然后再一次性插入</p>
+</li>
+<li><p>不要使用匿名函数来用作事件处理、这样不利于调试、测试、维护和服用<code>$(&quot;#btn&quot;).on(&#39;click&#39;,&#39;a&#39;,myClick);function myClick(){...}</code></p>
+</li>
+<li><p>在DOM元素上存储数据</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ele = $(<span class="string">'#ele'</span>);</div><div class="line">ele.data(key,value);</div><div class="line"><span class="comment">// 修改</span></div><div class="line"><span class="keyword">var</span> ele = $(<span class="string">'#ele'</span>);</div><div class="line">$.data(ele[<span class="number">0</span>],key,value);</div><div class="line"><span class="comment">// 因为elem.data()方法是定义在jQuery函数的prototype对象上面的，而$.data()方法是定义jQuery函数上面的，调用的时候不从复杂的jQuery对象上调用</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>如果可能的话使用自己的事件命名空间、这样方便地取消绑定而不影响其他的DOM元素事件绑定<code>$(&quot;#myClick&quot;).on(&quot;click.ntscshen&quot;,&quot;a&quot;,myEventHandler);$(&quot;#myClick&quot;).off(&quot;click.ntscshen&quot;)</code></p>
+</li>
+<li><p>不要处理不存在的元素<code>if($mySelection.length){...}</code></p>
+</li>
+<li><p>当某个事件后、如果要连续执行多个操作<code>使用自定义事件并使用自执行事件</code></p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shen</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $.trigger(<span class="string">'yang'</span>);</div><div class="line">&#125;</div><div class="line">$(<span class="built_in">document</span>).on(<span class="string">'yang'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  one();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="其他的优化方案"><a href="#其他的优化方案" class="headerlink" title="其他的优化方案"></a>其他的优化方案</h4><ul>
+<li>在JS内会用添加类名的方式修改”样式”属性<code>不要使用jquery.CSS({方法})</code>、使用添加类名的方式<code>$(&quot;#click&quot;).addClass(&quot;error&quot;);</code></li>
+</ul>
+<ul>
+<li>使用事件委托进行处理的方式<code>就近原则</code></li>
+<li>在注重性能的地方、请使用原生的Javascript代码</li>
+<li>当需要大量的DOM操作时、先隐藏在内存中操作、在显示<code>只触发两次重排和重绘操作</code></li>
+<li>定位元素的开销较小、不用考虑对其他元素的影响</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/MSite.png" alt="ntscshen wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫、用手机访问本站😈</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/31/BFC.html" rel="next" title="BFC">
+                <i class="fa fa-chevron-left"></i> BFC
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/06/设计模式之 - 单体模式.html" rel="prev" title="设计模式之 - 单体模式">
+                设计模式之 - 单体模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/01/页面性能管理.html"
+     data-title="页面性能管理"
+     data-content=""
+     data-url="http://ntscshen.com/2016/09/01/页面性能管理.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/01/页面性能管理.html"
+           data-title="页面性能管理" data-url="http://ntscshen.com/2016/09/01/页面性能管理.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ntscshen" />
+          <p class="site-author-name" itemprop="name">ntscshen</p>
+          <p class="site-description motion-element" itemprop="description">天行健，君子以自强不息</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网页生成的过程、大致分成五步"><span class="nav-number">1.</span> <span class="nav-text">网页生成的过程、大致分成五步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重排和重绘"><span class="nav-number">2.</span> <span class="nav-text">重排和重绘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一般规则如下"><span class="nav-number"></span> <span class="nav-text">一般规则如下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提高性能的技巧"><span class="nav-number"></span> <span class="nav-text">提高性能的技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css的效率"><span class="nav-number"></span> <span class="nav-text">css的效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结的优化技巧"><span class="nav-number"></span> <span class="nav-text">总结的优化技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS优化"><span class="nav-number">0.1.</span> <span class="nav-text">CSS优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery优化"><span class="nav-number">0.2.</span> <span class="nav-text">jQuery优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他的优化方案"><span class="nav-number">0.3.</span> <span class="nav-text">其他的优化方案</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ntscshen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ntscshen"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("QdlfjksHPhHH59wa9cyV9LQH-gzGzoHsz", "8Gvdz08YyhF6VD7EpI6ltJFR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

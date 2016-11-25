@@ -1,0 +1,1109 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="抓包？就是将网络传输发送与接收的数据包进行截获、重发、编辑、转存等操作，也用来检查网络安全。抓包也经常被用来进行数据截取等。
+为什么调试配置Host？ 我们知道在网络上访问网站，要首先通过DNS服务器把网络域名（www.XXXX.com）解析成61.XXX.XXX.XXX的IP地址后，我们的计算机才能访问。要是对于每个域名请求我们都要等待域名服务器解析后返回IP信息，这样访问网络的效率就会降低，而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac上网络抓包Charles">
+<meta property="og:url" content="http://ntscshen.com/2016/11/19/Mac上网络抓包Charles.html">
+<meta property="og:site_name" content="ntscshen">
+<meta property="og:description" content="抓包？就是将网络传输发送与接收的数据包进行截获、重发、编辑、转存等操作，也用来检查网络安全。抓包也经常被用来进行数据截取等。
+为什么调试配置Host？ 我们知道在网络上访问网站，要首先通过DNS服务器把网络域名（www.XXXX.com）解析成61.XXX.XXX.XXX的IP地址后，我们的计算机才能访问。要是对于每个域名请求我们都要等待域名服务器解析后返回IP信息，这样访问网络的效率就会降低，而">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/30Day.jpg">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/QQ20161120-1-2x.png">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/AutomaticMacOSConfigurationProxy-translate.jpg">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/Charle-Firefox-Proxy.png">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/Charle-Firefox-Proxy.jpg">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/QQ20161120-3-2x.png">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/firefox-charles-proxy.jpg">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/062002.jpg">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/homgpage1.jpg">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/proxy-settings.jpg">
+<meta property="og:image" content="http://images0.cnblogs.com/blog2015/717809/201507/051346395823455.png">
+<meta property="og:image" content="http://images0.cnblogs.com/blog2015/717809/201507/051341085151931.png">
+<meta property="og:image" content="http://images0.cnblogs.com/blog2015/717809/201507/051346589484842.png">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/charles-proxy-confirm-1.jpg">
+<meta property="og:updated_time" content="2016-11-20T10:07:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac上网络抓包Charles">
+<meta name="twitter:description" content="抓包？就是将网络传输发送与接收的数据包进行截获、重发、编辑、转存等操作，也用来检查网络安全。抓包也经常被用来进行数据截取等。
+为什么调试配置Host？ 我们知道在网络上访问网站，要首先通过DNS服务器把网络域名（www.XXXX.com）解析成61.XXX.XXX.XXX的IP地址后，我们的计算机才能访问。要是对于每个域名请求我们都要等待域名服务器解析后返回IP信息，这样访问网络的效率就会降低，而">
+<meta name="twitter:image" content="http://occeqxmsk.bkt.clouddn.com/30Day.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'ntscshen'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ntscshen.com/2016/11/19/Mac上网络抓包Charles.html"/>
+
+
+
+
+
+  <title> Mac上网络抓包Charles | ntscshen </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?fe2281abdef5c9c6f06c91743671e4b5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ntscshen</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">日光之下並無新事 | Day Coding</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-hourglass-2"></i> <br />
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/eercast" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            聚焦
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2016/11/19/Mac上网络抓包Charles.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="ntscshen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="ntscshen">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="ntscshen" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mac上网络抓包Charles
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-19T11:06:52+08:00">
+                2016-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/19/Mac上网络抓包Charles.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/19/Mac上网络抓包Charles.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/19/Mac上网络抓包Charles.html" class="leancloud_visitors" data-flag-title="Mac上网络抓包Charles">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>抓包？就是将<a href="http://baike.baidu.com/view/1542295.htm" target="_blank" rel="external">网络传输</a>发送与接收的<a href="http://baike.baidu.com/view/25880.htm" target="_blank" rel="external">数据包</a>进行截获、重发、编辑、转存等操作，也用来检查网络安全。抓包也经常被用来进行数据截取等。</p>
+<p>为什么调试配置Host？ 我们知道在网络上访问网站，要首先通过DNS服务器把网络域名（www.XXXX.com）解析成61.XXX.XXX.XXX的IP地址后，我们的计算机才能访问。要是对于每个域名请求我们都要等待域名服务器解析后返回IP信息，这样访问网络的效率就会降低，而Hosts文件就能提高解析效率。</p>
+<ul>
+<li>在很多单位的局域网中，会有服务器提供给用户使用。但由于局域网中一般很少架设DNS服务器，访问这些服务要输入难记的IP地址，对不少人来说相当麻烦。现在可以分别给这些服务器取个容易记住的名字，然后在Hosts中建立IP映射，这样以后访问的时候我们输入这个服务器的名字就行了。</li>
+<li>对于Lotus的服务器和一些<a href="http://lib.csdn.net/base/mysql" target="_blank" rel="external">数据库</a>服务器，在访问时如果直接输入IP地址那是不能访问的，只能输入服务器名才能访问。那么我们配置好Hosts文件，这样输入服务器名就能顺利连接了。</li>
+</ul>
+<p><a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a> Mac下常用的网络封包截取工具(免费30天 - 试用期过后建议购买<a href="http://www.charlesproxy.com/" target="_blank" rel="external">正版)</a></p>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/30Day.jpg" alt="http://occeqxmsk.bkt.clouddn.com/30Day.jpg"></p>
+<p>Charles通过将自己设置成系统的网络访问代理服务器，使得所有的网络访问请求都通过它来完成，从而实现了网络封包的截取和分析</p>
+<h3 id="Charles主要功能"><a href="#Charles主要功能" class="headerlink" title="Charles主要功能"></a>Charles主要功能</h3><ol>
+<li>截取Http和Https网络封包。</li>
+<li>支持重发网络请求，方便前后端调试。</li>
+<li>支持修改网络请求参数。</li>
+<li>支持网络请求的截获并动态修改。</li>
+<li>支持模拟满网速网络</li>
+</ol>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><p>下载好Charles - 打开下载包( <code>.dmg</code>后缀的文件 )后将Charles拖到<code>Application</code>目录下即可。</p>
+<p>启动Charles后、第一次Charles会请求您给它设置系统代理的权限。图例如下！</p>
+<blockquote>
+<p>源：</p>
+</blockquote>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/QQ20161120-1-2x.png" alt="http://occeqxmsk.bkt.clouddn.com/QQ20161120-1-2x.png"></p>
+<blockquote>
+<p>译：</p>
+</blockquote>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/AutomaticMacOSConfigurationProxy-translate.jpg" alt="http://occeqxmsk.bkt.clouddn.com/AutomaticMacOSConfigurationProxy-translate.jpg"></p>
+<h5 id="Firefox代理服务器配置"><a href="#Firefox代理服务器配置" class="headerlink" title="Firefox代理服务器配置"></a>Firefox代理服务器配置</h5><blockquote>
+<p>源：</p>
+</blockquote>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/Charle-Firefox-Proxy.png" alt="http://occeqxmsk.bkt.clouddn.com/Charle-Firefox-Proxy.png"></p>
+<blockquote>
+<p>译：</p>
+</blockquote>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/Charle-Firefox-Proxy.jpg" alt="http://occeqxmsk.bkt.clouddn.com/Charle-Firefox-Proxy.jpg"></p>
+<h4 id="在Firefox中打开-https-addons-mozilla-org-zh-CN-firefox-addon-charles-proxy"><a href="#在Firefox中打开-https-addons-mozilla-org-zh-CN-firefox-addon-charles-proxy" class="headerlink" title="在Firefox中打开 https://addons.mozilla.org/zh-CN/firefox/addon/charles-proxy/"></a>在Firefox中打开 <a href="https://addons.mozilla.org/zh-CN/firefox/addon/charles-proxy/" target="_blank" rel="external">https://addons.mozilla.org/zh-CN/firefox/addon/charles-proxy/</a></h4><blockquote>
+<p>源：</p>
+</blockquote>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/QQ20161120-3-2x.png" alt="http://occeqxmsk.bkt.clouddn.com/QQ20161120-3-2x.png"></p>
+<blockquote>
+<p>译：</p>
+</blockquote>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/firefox-charles-proxy.jpg" alt="http://occeqxmsk.bkt.clouddn.com/firefox-charles-proxy.jpg"></p>
+<p>这样在Firefox可以抓包<code>Proxy -&gt; Mozilla Firefox Proxy</code></p>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/062002.jpg" alt="http://occeqxmsk.bkt.clouddn.com/062002.jpg"></p>
+<h3 id="将Charles设置成系统代理"><a href="#将Charles设置成系统代理" class="headerlink" title="将Charles设置成系统代理"></a>将Charles设置成系统代理</h3><h3 id="Charles主界面"><a href="#Charles主界面" class="headerlink" title="Charles主界面"></a>Charles主界面</h3><ul>
+<li><p>Structure：结构( 视图将网络请求按访问的域名分类 )</p>
+</li>
+<li><p>Sequence：先后次序( 视图将网络请求按访问的时间排序 )</p>
+<blockquote>
+<p>根据具体的需求在这两个视图之间来回切换、大多数情况下截获的请求会很多，Charles提供了一个简单Filter功能，可以输入关键字来快速筛选URL中带指定关键字的网络请求</p>
+</blockquote>
+</li>
+<li><p>对于具体的网络请求</p>
+<ul>
+<li>若请求的内容是POST表单、Charles会自动将表单进行分项显示</li>
+<li>若是JSON格式的内容、Charles会自动将JSON内容格式化</li>
+<li>若是图片、Charles会显示出图片的预览</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/homgpage1.jpg" alt="http://occeqxmsk.bkt.clouddn.com/homgpage1.jpg"></p>
+<h3 id="抓包工具之断点修改-重点"><a href="#抓包工具之断点修改-重点" class="headerlink" title="抓包工具之断点修改( 重点 )"></a>抓包工具之断点修改( 重点 )</h3><blockquote>
+<p>更改返回数据来测试临界情况：这种做法可以让一个前端开发人员独立完成测试而不用拉一个后端一起联调，并且各种特殊维度，临界点都可以独立完成。仅仅自己在青花瓷上改来改去就可以达到效果了。</p>
+</blockquote>
+<p><code>在实际的工作中、你可以经常用来把某些值改为临界情况 - 以查看当前页面在处理这些临界状况收的反应、这样比(找后端联调\找临界点的测试账号)这些数据成本要低得多，</code></p>
+<h3 id="截获IPhone上的网络封包"><a href="#截获IPhone上的网络封包" class="headerlink" title="截获IPhone上的网络封包"></a>截获IPhone上的网络封包</h3><blockquote>
+<p>Charles通常用来截获本地上的网络封包、当我们需要时、可以用来截取其他设备上的网络请求，如下</p>
+</blockquote>
+<ol>
+<li><p>截取IPhone上的网络请求、首先打开Charles的代理功能<code>Proxy -&gt; Proxy Settings</code>填入代理端口<code>8888</code> 并勾选<code>&quot;Enable transparent HTTP proxying&quot;</code> 完成在Charles上的设置</p>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/proxy-settings.jpg" alt="http://occeqxmsk.bkt.clouddn.com/proxy-settings.jpg"></p>
+</li>
+<li><p>在手机上<code>&quot;设置&quot; -&gt; &quot;无线局域网&quot;</code> 找到当前链接的WIFI名、点击右侧详情( 感叹号 )，在最底部找到<code>HTTP代理</code>、修改成手动</p>
+<ol>
+<li><p><code>设置 - 无线局域网</code></p>
+<p><img src="http://images0.cnblogs.com/blog2015/717809/201507/051346395823455.png" alt="http://images0.cnblogs.com/blog2015/717809/201507/051346395823455.png"></p>
+</li>
+<li><p>服务器：<code>当前Charles运行所在电脑的IP：系统偏好设置 -&gt; 网络</code> 选中现在连着的网（大部分人应该都是WiFi吧）</p>
+</li>
+<li><p>​</p>
+<p><img src="http://images0.cnblogs.com/blog2015/717809/201507/051341085151931.png" alt="http://images0.cnblogs.com/blog2015/717809/201507/051341085151931.png"></p>
+</li>
+<li><p>服务器 ： <code>电脑IP地址</code>  ，端口号: <code>8888</code>，</p>
+<p><img src="http://images0.cnblogs.com/blog2015/717809/201507/051346589484842.png" alt="http://images0.cnblogs.com/blog2015/717809/201507/051346589484842.png"></p>
+</li>
+</ol>
+</li>
+<li><p>设置完成后、打开iphone上的任意与需要网络的软件、就可以在Charles上看到弹出如下信息,点击<code>&quot;Allow&quot;</code>即可完成设置 - 这是会有一大波抓包信息的展示</p>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/charles-proxy-confirm-1.jpg" alt="http://occeqxmsk.bkt.clouddn.com/charles-proxy-confirm-1.jpg"></p>
+</li>
+</ol>
+<h3 id="模拟慢速网络"><a href="#模拟慢速网络" class="headerlink" title="模拟慢速网络"></a>模拟慢速网络</h3><blockquote>
+<p>在开发时、我们常常需要模拟慢网速或者高延迟的网络、以测试在移动网络下、开发的产品是否显示正常</p>
+</blockquote>
+<ol>
+<li>在Charles菜单中，选择<code>&quot;Proxy - Throttle Setting&quot;</code>在之后弹出的对话框中、勾选上<code>&quot;Enable Throttling&quot;</code>,并且可以设置不同网速的类型如下</li>
+</ol>
+<h3 id="修改网络请求内容"><a href="#修改网络请求内容" class="headerlink" title="修改网络请求内容"></a>修改网络请求内容</h3><ol>
+<li>有时候伪类调试服务器的接口、我们需要反复尝试不同的参数的网络请求，Charles可以很方便的提供网络请求的修改和重发功能、在网络请求上点击右键,选择<code>&quot;Edit&quot;</code>,即可编辑</li>
+<li>我们可以修改请求的任何信息<ol>
+<li>URL地址</li>
+<li>端口号</li>
+<li>参数</li>
+<li>等等</li>
+</ol>
+</li>
+<li>之后点击<code>&quot;Execute&quot;</code>即可发送该修改后的网络请求。Charles支持我们多次修改和发送该请求，这对于我们和服务器端调试接口非常方便</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/MSite.png" alt="ntscshen wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫、用手机访问本站😈</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/18/页面操作iFrame的Dom.html" rel="next" title="页面操作iFrame的Dom">
+                <i class="fa fa-chevron-left"></i> 页面操作iFrame的Dom
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/11/19/Mac上网络抓包Charles.html"
+     data-title="Mac上网络抓包Charles"
+     data-content=""
+     data-url="http://ntscshen.com/2016/11/19/Mac上网络抓包Charles.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/19/Mac上网络抓包Charles.html"
+           data-title="Mac上网络抓包Charles" data-url="http://ntscshen.com/2016/11/19/Mac上网络抓包Charles.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ntscshen" />
+          <p class="site-author-name" itemprop="name">ntscshen</p>
+          <p class="site-description motion-element" itemprop="description">天行健，君子以自强不息</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Charles主要功能"><span class="nav-number">1.</span> <span class="nav-text">Charles主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装步骤"><span class="nav-number">2.</span> <span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Firefox代理服务器配置"><span class="nav-number">2.0.1.</span> <span class="nav-text">Firefox代理服务器配置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在Firefox中打开-https-addons-mozilla-org-zh-CN-firefox-addon-charles-proxy"><span class="nav-number">2.1.</span> <span class="nav-text">在Firefox中打开 https://addons.mozilla.org/zh-CN/firefox/addon/charles-proxy/</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将Charles设置成系统代理"><span class="nav-number">3.</span> <span class="nav-text">将Charles设置成系统代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Charles主界面"><span class="nav-number">4.</span> <span class="nav-text">Charles主界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抓包工具之断点修改-重点"><span class="nav-number">5.</span> <span class="nav-text">抓包工具之断点修改( 重点 )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#截获IPhone上的网络封包"><span class="nav-number">6.</span> <span class="nav-text">截获IPhone上的网络封包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟慢速网络"><span class="nav-number">7.</span> <span class="nav-text">模拟慢速网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网络请求内容"><span class="nav-number">8.</span> <span class="nav-text">修改网络请求内容</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ntscshen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ntscshen"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("QdlfjksHPhHH59wa9cyV9LQH-gzGzoHsz", "8Gvdz08YyhF6VD7EpI6ltJFR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
