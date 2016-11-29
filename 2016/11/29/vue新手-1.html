@@ -85,22 +85,28 @@
 
 
 
-<meta name="description" content="See the Pen Vue.js小案例 by ntscshen@163.com (@ntscshen) on CodePen.
-
-Vue.js小案例1">
+<meta name="description" content="Vue一个mvvm框架、比较容易上手、小巧( 适合：移动项目 )
+HTML代码配合Json、在new一个vue实例
+既然选择使用当前的框架、请遵循其标准
+vue.js引用地址 &amp;lt;script src=&amp;quot;https://unpkg.com/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+See the Pen Vue.js小案例 by ntscshe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue新手(1)">
 <meta property="og:url" content="http://ntscshen.com/2016/11/29/vue新手-1.html">
 <meta property="og:site_name" content="ntscshen">
-<meta property="og:description" content="See the Pen Vue.js小案例 by ntscshen@163.com (@ntscshen) on CodePen.
-
-Vue.js小案例1">
-<meta property="og:updated_time" content="2016-11-29T04:51:17.000Z">
+<meta property="og:description" content="Vue一个mvvm框架、比较容易上手、小巧( 适合：移动项目 )
+HTML代码配合Json、在new一个vue实例
+既然选择使用当前的框架、请遵循其标准
+vue.js引用地址 &amp;lt;script src=&amp;quot;https://unpkg.com/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+See the Pen Vue.js小案例 by ntscshe">
+<meta property="og:updated_time" content="2016-11-29T11:02:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue新手(1)">
-<meta name="twitter:description" content="See the Pen Vue.js小案例 by ntscshen@163.com (@ntscshen) on CodePen.
-
-Vue.js小案例1">
+<meta name="twitter:description" content="Vue一个mvvm框架、比较容易上手、小巧( 适合：移动项目 )
+HTML代码配合Json、在new一个vue实例
+既然选择使用当前的框架、请遵循其标准
+vue.js引用地址 &amp;lt;script src=&amp;quot;https://unpkg.com/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+See the Pen Vue.js小案例 by ntscshe">
 
 
 
@@ -434,9 +440,59 @@ Vue.js小案例1">
       
 
       
-        <iframe height="300" scrolling="no" title="Vue.js小案例" src="//codepen.io/ntscshen/embed/preview/vyeWOe/?height=300&theme-id=26516&default-tab=html,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/ntscshen/pen/vyeWOe/" target="_blank" rel="external">Vue.js小案例</a> by ntscshen@163.com (<a href="http://codepen.io/ntscshen" target="_blank" rel="external">@ntscshen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+        <p>Vue一个mvvm框架、比较容易上手、小巧( 适合：移动项目 )</p>
+<p>HTML代码配合Json、在new一个vue实例</p>
+<p>既然选择使用当前的框架、请遵循其标准</p>
+<p>vue.js引用地址 <code>&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code></p>
+<iframe height="300" scrolling="no" title="Vue.js小案例" src="//codepen.io/ntscshen/embed/preview/vyeWOe/?height=300&theme-id=26516&default-tab=html,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/ntscshen/pen/vyeWOe/" target="_blank" rel="external">Vue.js小案例</a> by ntscshen@163.com (<a href="http://codepen.io/ntscshen" target="_blank" rel="external">@ntscshen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
 
 <p><a href="http://codepen.io/ntscshen/pen/vyeWOe/" target="_blank" rel="external">Vue.js小案例1</a> </p>
+<h4 id="Vue常用指令"><a href="#Vue常用指令" class="headerlink" title="Vue常用指令"></a>Vue常用指令</h4><blockquote>
+<p>指令：带有 <strong>v-</strong> 前缀的特殊属性，指令属性的值、语气是 <strong>单一JavaScript表达式</strong> 。指令的职责就是当其表达式的值改变时相应地将某些行为应用到DOM上</p>
+</blockquote>
+<ol>
+<li>v-model</li>
+<li>v-for循环</li>
+<li>v-on:click绑定事件，methods( <strong>vue中单独提供的接口添加方法</strong> )</li>
+</ol>
+<blockquote>
+<p>案例1：点击添加按钮、循环添加一组数据(数组、对象)</p>
+<p>案例2：点击按钮div元素消失</p>
+<p>案例3：todolist; TODO：使用bootstrap( 只需要记忆class类名的框架 )</p>
+</blockquote>
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><blockquote>
+<p>因为 <strong>v-if</strong> 是一个指令(指令的职责就是当其表达式的值改变时相应地将某些行为应用到DOM上)，需要将它添加到一个元素上。我们可以把一个 <strong><template></template></strong> 元素当做包装元素，并在上面使用 <strong>v-if</strong> ,最终的渲染结果不会包含它</p>
+<p><strong>v-else</strong> 元素必须紧跟在 <strong>v-if</strong> 或 <strong>v-show</strong> 元素的后面 — 否则它不能被识别</p>
+<p><strong>v-show</strong> 的元素会始终渲染并保持在DOM中、简单的切换元素的CSS属性 <strong>display</strong> 。并且其不支持 <strong><template></template></strong> 语法</p>
+</blockquote>
+<h5 id="v-if-VS-v-show"><a href="#v-if-VS-v-show" class="headerlink" title="v-if VS v-show"></a><strong>v-if</strong> VS <strong>v-show</strong></h5><ul>
+<li><code>v-if</code> 是真实的条件渲染，应为它会确保条件块在切换当中适当地销毁与重建条件内的事件监听器和子组件</li>
+<li><code>v-if</code> 它是 <strong>惰性的</strong> ：如果在初始渲染时条件为假，则什么也不做 — 在条件第一次变为真时才开始局部编译( 编译会被缓存起来 )</li>
+<li>相比之下， <code>v-show</code> 简单的多 — 元素始终被编译并保留，只是简单地基于CSS切换</li>
+<li>一般来说， <code>v-if</code> 有更高的切换消耗而 <code>v-show</code> 有更高的初始渲染消耗。因此，如果需要频繁切换使用 <code>v-show</code> 较好，如果在运行时条件不大可能改变则使用 <code>v-if</code> 较好。</li>
+</ul>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><blockquote>
+<p><strong>v-for</strong> 指令根据一组数组的选项列表进行渲染。以 <strong>item in items</strong> 形式的特殊语法， <strong>items</strong> 是源数据数组并且 <strong>item</strong> 是数组元素迭代的别名</p>
+</blockquote>
+<ul>
+<li><p>在 <code>v-for</code> 快中，我们拥有对父作用域属性的完全访问权限。 <code>v-for</code> 还支持一个可选的第二个参数为当前项的索引</p>
+</li>
+<li><p>也可以使用 <code>of</code> 替代 <code>in</code> 作为分隔符，因为它是最接近JavaScript迭代器的语法</p>
+</li>
+<li><p>基本用法</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// item 项目</div><div class="line">&lt;ul id=&quot;Demo1&quot;&gt;</div><div class="line">  &lt;li v-for=&quot;item in items&quot;&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var vm = new Vue(&#123;</div><div class="line">	el: &apos;#Demo1&apos;,</div><div class="line">	data: &#123;</div><div class="line">		items: [</div><div class="line">          &#123;message: &apos;Foo&apos;&#125;,</div><div class="line">          &#123;message: &apos;Bar&apos;&#125;,</div><div class="line">          &#123;message: &apos;Shen&apos;&#125;</div><div class="line">		]</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="缩写："><a href="#缩写：" class="headerlink" title="缩写："></a>缩写：</h4><blockquote>
+<p>Vue为两个最为常用的指令提供了特别的缩写</p>
+</blockquote>
+<ul>
+<li><strong>v-bind:href</strong> 缩写 <strong>:href</strong> </li>
+<li><strong>v-on:click</strong> 缩写 <strong>@click</strong> </li>
+</ul>
 
       
     </div>
@@ -552,8 +608,17 @@ Vue.js小案例1">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://occeqxmsk.bkt.clouddn.com/bamboo.jpg"
@@ -644,6 +709,22 @@ Vue.js小案例1">
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue常用指令"><span class="nav-number">1.</span> <span class="nav-text">Vue常用指令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number"></span> <span class="nav-text">条件渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#v-if-VS-v-show"><span class="nav-number">0.1.</span> <span class="nav-text">v-if VS v-show</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染"><span class="nav-number"></span> <span class="nav-text">列表渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缩写："><span class="nav-number">1.</span> <span class="nav-text">缩写：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
       <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=32507038&auto=1&height=66"></iframe>
     </div>
