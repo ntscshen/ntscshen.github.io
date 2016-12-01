@@ -99,7 +99,8 @@ HTML代码配合Json、在new一个vue实例
 既然选择使用当前的框架、请遵循其标准
 vue.js引用地址 &amp;lt;script src=&amp;quot;https://unpkg.com/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 See the Pen Vue.js小案例 by ntscshe">
-<meta property="og:updated_time" content="2016-11-29T11:02:19.000Z">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/022559.jpg">
+<meta property="og:updated_time" content="2016-12-01T10:49:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue新手(1)">
 <meta name="twitter:description" content="Vue一个mvvm框架、比较容易上手、小巧( 适合：移动项目 )
@@ -107,6 +108,7 @@ HTML代码配合Json、在new一个vue实例
 既然选择使用当前的框架、请遵循其标准
 vue.js引用地址 &amp;lt;script src=&amp;quot;https://unpkg.com/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 See the Pen Vue.js小案例 by ntscshe">
+<meta name="twitter:image" content="http://occeqxmsk.bkt.clouddn.com/022559.jpg">
 
 
 
@@ -447,6 +449,9 @@ See the Pen Vue.js小案例 by ntscshe">
 <iframe height="300" scrolling="no" title="Vue.js小案例" src="//codepen.io/ntscshen/embed/preview/vyeWOe/?height=300&theme-id=26516&default-tab=html,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/ntscshen/pen/vyeWOe/" target="_blank" rel="external">Vue.js小案例</a> by ntscshen@163.com (<a href="http://codepen.io/ntscshen" target="_blank" rel="external">@ntscshen</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
 
 <p><a href="http://codepen.io/ntscshen/pen/vyeWOe/" target="_blank" rel="external">Vue.js小案例1</a> </p>
+<blockquote>
+<p>vue构造器是由一个作用域(el: ‘#app’)和一个数据中心组成( data:[] )</p>
+</blockquote>
 <h4 id="Vue常用指令"><a href="#Vue常用指令" class="headerlink" title="Vue常用指令"></a>Vue常用指令</h4><blockquote>
 <p>指令：带有 <strong>v-</strong> 前缀的特殊属性，指令属性的值、语气是 <strong>单一JavaScript表达式</strong> 。指令的职责就是当其表达式的值改变时相应地将某些行为应用到DOM上</p>
 </blockquote>
@@ -459,6 +464,8 @@ See the Pen Vue.js小案例 by ntscshe">
 <p>案例1：点击添加按钮、循环添加一组数据(数组、对象)</p>
 <p>案例2：点击按钮div元素消失</p>
 <p>案例3：todolist; TODO：使用bootstrap( 只需要记忆class类名的框架 )</p>
+<p>案例4：v-if随机数 Math.random()</p>
+<p>案例5：显示隐藏</p>
 </blockquote>
 <h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><blockquote>
 <p>因为 <strong>v-if</strong> 是一个指令(指令的职责就是当其表达式的值改变时相应地将某些行为应用到DOM上)，需要将它添加到一个元素上。我们可以把一个 <strong><template></template></strong> 元素当做包装元素，并在上面使用 <strong>v-if</strong> ,最终的渲染结果不会包含它</p>
@@ -479,13 +486,40 @@ See the Pen Vue.js小案例 by ntscshe">
 </li>
 <li><p>也可以使用 <code>of</code> 替代 <code>in</code> 作为分隔符，因为它是最接近JavaScript迭代器的语法</p>
 </li>
-<li><p>基本用法</p>
+<li><p><strong>基本用法</strong> ( 数组迭代 )</p>
 <ul>
 <li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// item 项目</div><div class="line">&lt;ul id=&quot;Demo1&quot;&gt;</div><div class="line">  &lt;li v-for=&quot;item in items&quot;&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var vm = new Vue(&#123;</div><div class="line">	el: &apos;#Demo1&apos;,</div><div class="line">	data: &#123;</div><div class="line">		items: [</div><div class="line">          &#123;message: &apos;Foo&apos;&#125;,</div><div class="line">          &#123;message: &apos;Bar&apos;&#125;,</div><div class="line">          &#123;message: &apos;Shen&apos;&#125;</div><div class="line">		]</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
+<li><p><strong>用法二</strong> </p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// 在v-for 快中，我们拥有对父作用域属性的完全访问权限。v-for还支持一个可选的第二个参数作为当前项目的索引</div><div class="line">// 您也可以使用of 代替 in 作为分隔符，因为它是最接近JavaScript迭代器的语法</div><div class="line">&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;ul id=&quot;Example&quot;&gt;</div><div class="line">  &lt;li v-for=&quot;(item, index) in items&quot;&gt;</div><div class="line">    &#123;&#123; parentMessage &#125;&#125; - &#123;&#123; index &#125;&#125; - &#123;&#123; item.message &#125;&#125;</div><div class="line">  &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#Example&apos;,</div><div class="line">  data: &#123;</div><div class="line">    parentMessage: &apos;Parent&apos;,</div><div class="line">    items: [</div><div class="line">      &#123;message: &apos;Foo&apos;&#125;,</div><div class="line">      &#123;message: &apos;Bar&apos;&#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
+</li>
+<li><p><strong>用法三</strong></p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 如果同v-if模板，你可以用带有v-for 的 &lt;template&gt;标签来渲染多个元素快</div><div class="line">  &lt;ul&gt;</div><div class="line">  	&lt;template v-for=&quot;item in items&quot;&gt;</div><div class="line">		&lt;li&gt;&#123;&#123; item.msg &#125;&#125;&lt;/li&gt;</div><div class="line">      	&lt;li style=&quot;height: 5px; background-color: #efe0ce;&quot;&gt;&lt;/li&gt;</div><div class="line">    &lt;/template&gt;</div><div class="line">  &lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>基础用法</strong>  -  对象迭代</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// 可以使用 v-for 通过一个对象的属性来迭代</div><div class="line">// (value, key, index) in object</div><div class="line">// 顺序严格规定(value(1:值), key(2:键), index(3:索引))</div><div class="line">// value 值</div><div class="line">// key 键</div><div class="line">// index 索引</div><div class="line">&lt;ul id=&quot;object&quot;&gt;</div><div class="line">  &lt;li v-for=&quot;value in object&quot;&gt;</div><div class="line">  	&#123;&#123; value &#125;&#125;</div><div class="line">  &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var vm = new Vue([</div><div class="line">  el: &quot;#object&quot;,</div><div class="line">  data: &#123;</div><div class="line">    object: &#123;</div><div class="line">      name: &apos;ntscshen&apos;,</div><div class="line">  	  gender: &apos;男&apos;,</div><div class="line">  	  age: 24,</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><img src="http://occeqxmsk.bkt.clouddn.com/022559.jpg" alt="http://occeqxmsk.bkt.clouddn.com/022559.jpg"></p>
+</li>
+</ul>
+<blockquote>
+<p>数组和对象迭代总结：( 顺序严格规定 )</p>
+<p>1、数组：v-for=”(item, index) in items” 内容，索引</p>
+<p>2、对象：v-for=”(value, key, index) in object” 值，键，索引</p>
+<p>3、整数：v-for=”n in 10”</p>
+<p>4、组件：在自定义组件中，你可以想任何普通元素一样使用 v-for</p>
+</blockquote>
 <h4 id="缩写："><a href="#缩写：" class="headerlink" title="缩写："></a>缩写：</h4><blockquote>
 <p>Vue为两个最为常用的指令提供了特别的缩写</p>
 </blockquote>
@@ -493,7 +527,48 @@ See the Pen Vue.js小案例 by ntscshe">
 <li><strong>v-bind:href</strong> 缩写 <strong>:href</strong> </li>
 <li><strong>v-on:click</strong> 缩写 <strong>@click</strong> </li>
 </ul>
-
+<p>​    </p>
+<h3 id="vue监听"><a href="#vue监听" class="headerlink" title="vue监听"></a>vue监听</h3><ul>
+<li><p>监听数据值的变化( 当改变时、修改内容 )</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">var vm = new Vue(&#123;</div><div class="line">	el: &apos;#app&apos;,</div><div class="line">	data: &#123;</div><div class="line">        num1: 0,</div><div class="line">		num2: 10,</div><div class="line">		total: 0</div><div class="line">	&#125;,</div><div class="line">	watch: &#123;</div><div class="line">      &quot;num1&quot;:function(newval,oldval)&#123;</div><div class="line">		if(this.num1 &gt;= 3)&#123;</div><div class="line">          this.total = this.total - this.num2;</div><div class="line">		&#125;</div><div class="line">      &#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Class与Style绑定"><a href="#Class与Style绑定" class="headerlink" title="Class与Style绑定"></a>Class与Style绑定</h2><blockquote>
+<p>数据绑定一个常见需求是 - 操作元素的class列表和它的内联样式。因为它们都是属性，我们可以用v-bind处理。</p>
+</blockquote>
+<h4 id="class"><a href="#class" class="headerlink" title=":class"></a>:class</h4><ul>
+<li><code>:class=&quot;{red: isRed}&quot;</code></li>
+<li><code>:class=&quot;{classA,classB}&quot;</code> data数据中映射类名</li>
+<li><code>:class=&quot;{&#39;class-A&#39;:isA,&#39;class-B:isB&#39;}&quot;</code> 在字面量方式里 - 第一方法的衍生</li>
+<li><code>:class=[classA,{&#39;class-C&#39;:isC,&#39;class-B&#39;:isB}]</code> 组合方式</li>
+</ul>
+<h4 id="style"><a href="#style" class="headerlink" title=":style"></a>:style</h4><ul>
+<li><p><code>:style=&quot;{fontSize: size + &#39;px&#39;}&quot;</code></p>
+</li>
+<li><p><code>:style=&quot;{styleObjectA,styleObjectB}&quot;</code> data数据映射</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  styleObjectA:&#123;</div><div class="line">    color: &apos;red&apos;,</div><div class="line">    fontSize: &apos;100px&apos;</div><div class="line">  &#125;,</div><div class="line">  styleObjectB:&#123;</div><div class="line">    background-color: &apos;pink;</div><div class="line">    border: &apos;2px solid red&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>为元素绑定动态的属性、要使用v-bind这个质量、质量就是一些特别的属性、一般以 <code>v-</code> 开头</p>
+</li>
+<li><p>在元素上面动态的去应用一些CSS类、使用 <code>v-bind</code> 指令绑定 <code>class</code> 属性</p>
+<ul>
+<li><p>对象</p>
+</li>
+<li><p>数组  </p>
+<ul>
+<li><p><code>[buttonClass, colorClass]</code> 映射对应的Class类名、在 <code>data</code> 数据中添加 <code>key</code> 和 <code>映射的类名</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var dataSource = &#123;</div><div class="line">	buttonClass: &apos;ui button&apos;,// ui button 类名</div><div class="line">	colorClass: &apos;violet&apos;// violet 类名</div><div class="line">&#125;</div><div class="line">var vm = new Vue(&#123;</div><div class="line">	el: &apos;#app&apos;,</div><div class="line">	data: dataSource</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div id=&quot;app&quot;&gt;</div><div class="line">      &lt;div class=&quot;ui container&quot;&gt;</div><div class="line">        &lt;div class=&quot;ui hidden divider&quot;&gt;</div><div class="line">          &lt;button v-bind:class=&quot;[buttonClass, colorClass, classObject]&quot;&gt;按钮&lt;/button&gt;</div><div class="line">          &lt;h2 style=&quot;color: red;&quot;&gt;绑定类&lt;/h2&gt;</div><div class="line">          &lt;ul&gt;</div><div class="line">            &lt;li&gt;我们可以动态的去设置一下这个按钮的颜色 &lt;strog&gt;vm.colorClass=&quot;green&quot;&lt;/strog&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;有一些css类你可能希望，根据某一个值去动态的添加&lt;/li&gt;</div><div class="line">            &lt;li&gt;在绑定类的数组里给其添加变量&lt;strong&gt;&#123;loading: isLoading&#125;&lt;/strong&gt;&lt;/li&gt;</div><div class="line">            &lt;li style=&quot;color: violet&quot;&gt;这块的意思就是：&lt;p style=&quot;red&quot;&gt;如果应用里面的isLoading值是true的话、就会在这个元素的上面去添加一个loading这样的一个css类&lt;/p&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;在Data数据中添加&lt;p&gt;isLoading:false&lt;/p&gt;。之后在控制台动态的设置isLoading的值&lt;/li&gt;</div><div class="line">            &lt;li&gt;我们可以动态的去设置一下这个按钮的颜色 &lt;stro&gt;vm.colorClass=&quot;green&quot;&lt;/stro&gt;&lt;/li&gt;\</div><div class="line">            &lt;li&gt;表达式可以在v-bind:class=&quot;[isActive ? activeClass :&apos;&apos;, errorClass]&quot; 绑定类中去写&lt;/li&gt;</div><div class="line">            &lt;!-- &lt;div v-bind:class=&quot;[&#123;active:isActive&#125;,errorClass]&quot;&gt;&lt;/div&gt; --&gt;</div><div class="line">            &lt;!--</div><div class="line">              v-bind 有点类似于jQuery的css。只是在这之上映射了一层。data</div><div class="line">              如果直接这样。模板会跟加清晰</div><div class="line">              data: &#123;</div><div class="line">                styleObject: &#123;</div><div class="line">                  color: &apos;red&apos;,</div><div class="line">                  fontSize: &apos;14px&apos;;</div><div class="line">                &#125;</div><div class="line">              &#125;</div><div class="line">              &lt;div :style=&quot;styleObject&quot;&gt;&lt;/div&gt;</div><div class="line">           --&gt;</div><div class="line">          &lt;/ul&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var vm = new Vue(&#123;</div><div class="line">        el: &apos;#app&apos;,</div><div class="line">        data: &#123;</div><div class="line">          buttonClass: &apos;ui button&apos;,</div><div class="line">          colorClass: &apos;violet&apos;,</div><div class="line">          isLoading: true,</div><div class="line">          error: null</div><div class="line">        &#125;,</div><div class="line">        computed:&#123;</div><div class="line">          classObject: function()&#123;</div><div class="line">            return &#123;</div><div class="line">              loading: this.isLoading &amp;&amp; !this.error,</div><div class="line"></div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -719,7 +794,7 @@ See the Pen Vue.js小案例 by ntscshe">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue常用指令"><span class="nav-number">1.</span> <span class="nav-text">Vue常用指令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number"></span> <span class="nav-text">条件渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#v-if-VS-v-show"><span class="nav-number">0.1.</span> <span class="nav-text">v-if VS v-show</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染"><span class="nav-number"></span> <span class="nav-text">列表渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缩写："><span class="nav-number">1.</span> <span class="nav-text">缩写：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue常用指令"><span class="nav-number">1.</span> <span class="nav-text">Vue常用指令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number"></span> <span class="nav-text">条件渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#v-if-VS-v-show"><span class="nav-number">0.1.</span> <span class="nav-text">v-if VS v-show</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染"><span class="nav-number"></span> <span class="nav-text">列表渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缩写："><span class="nav-number">1.</span> <span class="nav-text">缩写：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue监听"><span class="nav-number"></span> <span class="nav-text">vue监听</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class与Style绑定"><span class="nav-number"></span> <span class="nav-text">Class与Style绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#class"><span class="nav-number">1.</span> <span class="nav-text">:class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#style"><span class="nav-number">2.</span> <span class="nav-text">:style</span></a></li></ol></div>
             
 
           </div>
