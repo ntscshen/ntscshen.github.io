@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="webPlayer使用方法总结," />
 
 
 
@@ -85,19 +85,31 @@
 
 
 
-<meta name="description" content="固定宽高123456789.wrap &amp;#123;  width: 200px;  height: 200px;  background-color: red;  position: absolute;  left: 50%;top: 50%;  margin-left: -100px;  margin-top: -100px;&amp;#125;
-1234567891011.wrap &amp;#123;  w">
+<meta name="description" content="[TOC]
+webPlayer 使用方法的一些总结
+( 建议先仔细阅读WebPlayerSDK点播.pdf和 WebPlayerSDK直播.pdf )
+
+点播播放器相关
+文档中给出的 playId() 方法在页面只有一个点播播放器的时候可以正常使用，但当页面中有直播播放器时再次调用点播播放器的 playId() 方法就会失效，页面不会报错代码也会执行，只是执行完毕后没有出现预期的效果。初步猜测是因">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css居中的几种方案">
-<meta property="og:url" content="http://ntscshen.com/2016/08/31/css居中的几种方案.html">
+<meta property="og:title" content="webPlayer使用方法总结">
+<meta property="og:url" content="http://ntscshen.com/2016/12/02/webPlayer使用方法总结.html">
 <meta property="og:site_name" content="ntscshen">
-<meta property="og:description" content="固定宽高123456789.wrap &amp;#123;  width: 200px;  height: 200px;  background-color: red;  position: absolute;  left: 50%;top: 50%;  margin-left: -100px;  margin-top: -100px;&amp;#125;
-1234567891011.wrap &amp;#123;  w">
-<meta property="og:updated_time" content="2016-11-28T06:02:14.000Z">
+<meta property="og:description" content="[TOC]
+webPlayer 使用方法的一些总结
+( 建议先仔细阅读WebPlayerSDK点播.pdf和 WebPlayerSDK直播.pdf )
+
+点播播放器相关
+文档中给出的 playId() 方法在页面只有一个点播播放器的时候可以正常使用，但当页面中有直播播放器时再次调用点播播放器的 playId() 方法就会失效，页面不会报错代码也会执行，只是执行完毕后没有出现预期的效果。初步猜测是因">
+<meta property="og:updated_time" content="2016-12-02T08:03:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css居中的几种方案">
-<meta name="twitter:description" content="固定宽高123456789.wrap &amp;#123;  width: 200px;  height: 200px;  background-color: red;  position: absolute;  left: 50%;top: 50%;  margin-left: -100px;  margin-top: -100px;&amp;#125;
-1234567891011.wrap &amp;#123;  w">
+<meta name="twitter:title" content="webPlayer使用方法总结">
+<meta name="twitter:description" content="[TOC]
+webPlayer 使用方法的一些总结
+( 建议先仔细阅读WebPlayerSDK点播.pdf和 WebPlayerSDK直播.pdf )
+
+点播播放器相关
+文档中给出的 playId() 方法在页面只有一个点播播放器的时候可以正常使用，但当页面中有直播播放器时再次调用点播播放器的 playId() 方法就会失效，页面不会报错代码也会执行，只是执行完毕后没有出现预期的效果。初步猜测是因">
 
 
 
@@ -125,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://ntscshen.com/2016/08/31/css居中的几种方案.html"/>
+  <link rel="canonical" href="http://ntscshen.com/2016/12/02/webPlayer使用方法总结.html"/>
 
 
 
 
 
-  <title> css居中的几种方案 | ntscshen </title>
+  <title> webPlayer使用方法总结 | ntscshen </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -324,7 +336,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2016/08/31/css居中的几种方案.html">
+  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2016/12/02/webPlayer使用方法总结.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ntscshen">
@@ -348,7 +360,7 @@
             
             
               
-                css居中的几种方案
+                webPlayer使用方法总结
               
             
           </h1>
@@ -361,8 +373,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-31T15:57:59+08:00">
-                2016-08-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-02T16:02:52+08:00">
+                2016-12-02
               </time>
             
 
@@ -380,8 +392,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/布局/" itemprop="url" rel="index">
-                    <span itemprop="name">布局</span>
+                  <a href="/categories/webPlayer使用方法总结/" itemprop="url" rel="index">
+                    <span itemprop="name">webPlayer使用方法总结</span>
                   </a>
                 </span>
 
@@ -395,8 +407,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/08/31/css居中的几种方案.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/31/css居中的几种方案.html" itemprop="commentCount"></span>
+                <a href="/2016/12/02/webPlayer使用方法总结.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/02/webPlayer使用方法总结.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -406,7 +418,7 @@
 
           
           
-             <span id="/2016/08/31/css居中的几种方案.html" class="leancloud_visitors" data-flag-title="css居中的几种方案">
+             <span id="/2016/12/02/webPlayer使用方法总结.html" class="leancloud_visitors" data-flag-title="webPlayer使用方法总结">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -431,16 +443,36 @@
       
 
       
-        <h4 id="固定宽高"><a href="#固定宽高" class="headerlink" title="固定宽高"></a>固定宽高</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">background-color</span>: red;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;<span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">margin-left</span>: -<span class="number">100px</span>;</div><div class="line">  <span class="attribute">margin-top</span>: -<span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">margin</span>: auto;</div><div class="line">  <span class="attribute">background-color</span>: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">background-color</span>: chartreuse;</div><div class="line">  <span class="attribute">display</span>: table;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.wrap</span> <span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">display</span>: table-cell;</div><div class="line">  <span class="attribute">vertical-align</span>: middle;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">background-color</span>: red;</div><div class="line">  <span class="attribute">text-align</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="comment">/* 若为快级元素：则修改为display: inilne-block;即可 */</span></div><div class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">background-color</span>: pink;</div><div class="line">  <span class="attribute">vertical-align</span>: middle;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span><span class="selector-pseudo">::after</span>&#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">1px</span>;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">500px</span>;</div><div class="line">    <span class="attribute">background-color</span>: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="不固定宽度"><a href="#不固定宽度" class="headerlink" title="不固定宽度"></a>不固定宽度</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.div1</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">margin</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 相对定位 + 浮动 */</span></div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">background-color</span>: yellow;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">li</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">left</span>: -<span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: -<span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">li</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">left</span>: -<span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  width: 500px;</div><div class="line">  height: 500px;</div><div class="line">  background-color: #77BBDD;</div><div class="line">  /** 各种版本兼容**/</div><div class="line">  display: -webkit-box;</div><div class="line">  display: -moz-box;</div><div class="line">  display: -ms-flexbox;</div><div class="line">  display: -webkit-flex;</div><div class="line">  display: flex;</div><div class="line">  /** 垂直居中核心、兼容**/</div><div class="line">  -webkit-box-pack: center;//09版水平居中</div><div class="line">  -moz-box-pack: center;</div><div class="line">  -ms-flex-pack: center;//过度版(混合版)</div><div class="line">  -webkit-justify-content: center;//12版水平居中</div><div class="line">  justify-content: center;</div><div class="line"></div><div class="line">  -webkit-box-align: center;//09版垂直居中</div><div class="line">  -moz-box-align: center;</div><div class="line">  -ms-flex-align: center;//过度版(混合版)</div><div class="line">  -webkit-align-items: center;//12版垂直居中</div><div class="line">  align-items: center;</div><div class="line">  width: 0%;//低版本Android的flex-item无法等分</div><div class="line">  display: block;</div><div class="line">  /*</div><div class="line">  实则只需三行</div><div class="line">  display: flex;</div><div class="line">  justify-content: center;</div><div class="line">  align-items: center;</div><div class="line">  */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="居中浮动元素"><a href="#居中浮动元素" class="headerlink" title="居中浮动元素"></a>居中浮动元素</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line"> 	<span class="attribute">position</span>: relative;</div><div class="line">  	<span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">100px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: -<span class="number">100px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>[TOC]</p>
+<h1 id="webPlayer-使用方法的一些总结"><a href="#webPlayer-使用方法的一些总结" class="headerlink" title="webPlayer 使用方法的一些总结"></a>webPlayer 使用方法的一些总结</h1><blockquote>
+<p>( 建议先仔细阅读WebPlayerSDK点播.pdf和 WebPlayerSDK直播.pdf )</p>
+</blockquote>
+<h3 id="点播播放器相关"><a href="#点播播放器相关" class="headerlink" title="点播播放器相关"></a>点播播放器相关</h3><ol>
+<li><p>文档中给出的 <code>playId()</code> 方法在页面只有一个点播播放器的时候可以正常使用，但当页面中有直播播放器时再次调用点播播放器的 <code>playId()</code> 方法就会失效，页面不会报错代码也会执行，只是执行完毕后没有出现预期的效果。初步猜测是因为其他播放器对这个功能造成了影响。解决方法是，重新创建一个播放器覆盖原有播放器。</p>
+</li>
+<li><p>当点播播放器中的视频是仅会员可看时，未登录用户点击此视频时播放器内部会提示用户登陆，此时要想实现登陆操作需要在点播播放器的页面接口集合 <code>( interface对象 )</code> 中传入 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">openLoginDialog :<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	verifyUserloginStatus();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当点播播放器中的视频是仅会员可看时，已登陆的非会员用户点击此视频时，播放器内部会提示用户开通会员，pc页面点击此按钮可以正常跳转到支付页面；m站页面点击此按钮无效，需要用事件委托的形式给开通会员按钮绑定跳转到支付页面的事件；</p>
+</li>
+<li><p>PC页面中当点播播放器中的视频是仅会员可看时，用户中途登陆是会员的账户时播放器不会刷新（有的仅会员可看视频可以免费看前6分钟，所以存在中途登陆的情况），会依然提示他购买会员。调用播放器的 <code>loginStateChange()</code> 方法并未能解决问题，解决办法是</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//监听登录状态 切换时触发</span></div><div class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    LEPass.onStatusChange(<span class="function"><span class="keyword">function</span> (<span class="params">type, userInfo</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (type == <span class="string">"signIn"</span> ) &#123;</div><div class="line">            ($(<span class="string">".na-drama-list"</span>).find(<span class="string">".playing"</span>).find(<span class="string">"a"</span>).data(<span class="string">"pid"</span>)) &#123;</div><div class="line">                dianboPlayer($(<span class="string">".na-drama-list"</span>).find(<span class="string">".playing"</span>).find(<span class="string">"a"</span>).data(<span class="string">"pid"</span>));</div><div class="line">          &#125; </div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>（找到当前正在播放视频的id，利用此id重新创建播放器或者将id传入到 <code>playId()</code> 方法中，具体怎么操作需要看当前的代码结构）；m站页面没有此问题，因为只要登陆状态发生改变m站页面会自动强制刷新。</p>
+</li>
+<li><p>关于点播播放器续播的问题可以调用播放器的onPlayerVideoComplete事件回调</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onPlayerVideoComplete: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;   </div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">status</span>: <span class="string">'playerContinue'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="直播播放器相关"><a href="#直播播放器相关" class="headerlink" title="直播播放器相关"></a>直播播放器相关</h3><p>直播分为“直播中”、“未开始”、“已结束”三种状态，其中要注意已结束的直播视频（也就是“回看”视频），从后台取出来的回看视频数据一般会带有一个名为 <code>recordingId</code> 的参数，但是有的原本正在直播中视频在刚刚结束的时候虽然已经变成了回看视频，但是并未带有 <code>recordingId</code> 参数。所以，对于回看视频：</p>
+<ol>
+<li>如果取到recordingId参数就将recordingId传入到点播播放器；</li>
+<li>如果取不到recordingId参数就将原本的视频id传入直播播放器。</li>
+</ol>
+<h3 id="一些共同的问题总结"><a href="#一些共同的问题总结" class="headerlink" title="一些共同的问题总结"></a>一些共同的问题总结</h3><ol>
+<li>关于播放器黑边，如果视频的比例全部一样，那么只要保证播放器盒子的宽高比和视频的一致就没有黑边了；如果视频的比例不一致，请尽可能将播放器的宽高调到一个合适的比例以保证黑边在所有视频中都尽可能小。</li>
+<li>目前已知直播播放器会影响到点播播放器的 <code>playId()</code> 方法，由于本次项目经验有限，关于播放器之间的相互影响以及其他经验还需要屏幕外的你在未来的项目中进行总结。</li>
+</ol>
+
       
     </div>
 
@@ -468,7 +500,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/webPlayer使用方法总结/" rel="tag"># webPlayer使用方法总结</a>
           
         </div>
       
@@ -477,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/31/Sass总结.html" rel="next" title="Sass总结">
-                <i class="fa fa-chevron-left"></i> Sass总结
+              <a href="/2016/11/29/vue新手-1.html" rel="next" title="vue新手(1)">
+                <i class="fa fa-chevron-left"></i> vue新手(1)
               </a>
             
           </div>
@@ -486,10 +518,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/31/BFC.html" rel="prev" title="BFC">
-                BFC <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,10 +532,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/31/css居中的几种方案.html"
-     data-title="css居中的几种方案"
+        <div class="ds-share flat" data-thread-key="2016/12/02/webPlayer使用方法总结.html"
+     data-title="webPlayer使用方法总结"
      data-content=""
-     data-url="http://ntscshen.com/2016/08/31/css居中的几种方案.html">
+     data-url="http://ntscshen.com/2016/12/02/webPlayer使用方法总结.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -534,8 +562,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/31/css居中的几种方案.html"
-           data-title="css居中的几种方案" data-url="http://ntscshen.com/2016/08/31/css居中的几种方案.html">
+      <div class="ds-thread" data-thread-key="2016/12/02/webPlayer使用方法总结.html"
+           data-title="webPlayer使用方法总结" data-url="http://ntscshen.com/2016/12/02/webPlayer使用方法总结.html">
       </div>
     
   </div>
@@ -670,7 +698,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#固定宽高"><span class="nav-number">1.</span> <span class="nav-text">固定宽高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不固定宽度"><span class="nav-number">2.</span> <span class="nav-text">不固定宽度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#居中浮动元素"><span class="nav-number"></span> <span class="nav-text">居中浮动元素</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webPlayer-使用方法的一些总结"><span class="nav-number">1.</span> <span class="nav-text">webPlayer 使用方法的一些总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点播播放器相关"><span class="nav-number">1.0.1.</span> <span class="nav-text">点播播放器相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直播播放器相关"><span class="nav-number">1.0.2.</span> <span class="nav-text">直播播放器相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些共同的问题总结"><span class="nav-number">1.0.3.</span> <span class="nav-text">一些共同的问题总结</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
