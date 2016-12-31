@@ -85,31 +85,16 @@
 
 
 
-<meta name="description" content="This、call、apply
-This：JavaScript的this总是指向一个对象。
-而具体指向哪个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。
-this 的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。
-this 实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用
-在理解 this 是什么❓首先必须要找到”调用位置“，然后判断符合那种">
+<meta name="description" content="回想起这6个月的工作经历、业务做了不少，熟练度直线上升。然而归纳却寥寥无几，这让我再次抓起了我当初简历博客的初衷，不花时间精力去总结，平时业务上用到的零散的知识就很难形成体系。善于归纳总结：如果不善于归纳总结，每次做完项目就结束了，进入循环，那么永远是士兵，不要总是讲一些口号，喊口号的人可以当主持人，但是不能当将军。不归纳就不能前进，不前进就永远在原地踏步。认识一步步前进的，只要一小步一小步地前进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="this深入理解">
 <meta property="og:url" content="http://ntscshen.com/2016/12/31/this深入理解.html">
 <meta property="og:site_name" content="ntscshen">
-<meta property="og:description" content="This、call、apply
-This：JavaScript的this总是指向一个对象。
-而具体指向哪个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。
-this 的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。
-this 实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用
-在理解 this 是什么❓首先必须要找到”调用位置“，然后判断符合那种">
-<meta property="og:updated_time" content="2016-12-31T13:29:23.000Z">
+<meta property="og:description" content="回想起这6个月的工作经历、业务做了不少，熟练度直线上升。然而归纳却寥寥无几，这让我再次抓起了我当初简历博客的初衷，不花时间精力去总结，平时业务上用到的零散的知识就很难形成体系。善于归纳总结：如果不善于归纳总结，每次做完项目就结束了，进入循环，那么永远是士兵，不要总是讲一些口号，喊口号的人可以当主持人，但是不能当将军。不归纳就不能前进，不前进就永远在原地踏步。认识一步步前进的，只要一小步一小步地前进">
+<meta property="og:updated_time" content="2016-12-31T13:41:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this深入理解">
-<meta name="twitter:description" content="This、call、apply
-This：JavaScript的this总是指向一个对象。
-而具体指向哪个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。
-this 的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。
-this 实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用
-在理解 this 是什么❓首先必须要找到”调用位置“，然后判断符合那种">
+<meta name="twitter:description" content="回想起这6个月的工作经历、业务做了不少，熟练度直线上升。然而归纳却寥寥无几，这让我再次抓起了我当初简历博客的初衷，不花时间精力去总结，平时业务上用到的零散的知识就很难形成体系。善于归纳总结：如果不善于归纳总结，每次做完项目就结束了，进入循环，那么永远是士兵，不要总是讲一些口号，喊口号的人可以当主持人，但是不能当将军。不归纳就不能前进，不前进就永远在原地踏步。认识一步步前进的，只要一小步一小步地前进">
 
 
 
@@ -443,7 +428,8 @@ this 实际上是在函数被调用时发生的绑定，它指向什么完全取
       
 
       
-        <h1 id="This、call、apply"><a href="#This、call、apply" class="headerlink" title="This、call、apply"></a>This、call、apply</h1><blockquote>
+        <p><code>回想起这6个月的工作经历、业务做了不少，熟练度直线上升。然而归纳却寥寥无几，这让我再次抓起了我当初简历博客的初衷，不花时间精力去总结，平时业务上用到的零散的知识就很难形成体系。善于归纳总结：如果不善于归纳总结，每次做完项目就结束了，进入循环，那么永远是士兵，不要总是讲一些口号，喊口号的人可以当主持人，但是不能当将军。不归纳就不能前进，不前进就永远在原地踏步。认识一步步前进的，只要一小步一小步地前进，过几年当你汇总总结时，就会发现你前进了一大步。</code></p>
+<h1 id="This、call、apply"><a href="#This、call、apply" class="headerlink" title="This、call、apply"></a>This、call、apply</h1><blockquote>
 <p><strong>This：</strong><br>JavaScript的this总是指向一个对象。</p>
 <p>而具体指向哪个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。</p>
 <p><code>this</code> 的绑定和函数声明的位置没有任何关系，只取决于函数的<strong>调用方式</strong>。</p>
