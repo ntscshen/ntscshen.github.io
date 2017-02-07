@@ -85,16 +85,31 @@
 
 
 
-<meta name="description" content="管理静态变量123456789101112131415161718var Conf = (function()&amp;#123;  // 私有变量  var config = &amp;#123;    MAX_NUM: 100,    MIN_NUM:1,    COUNT: 1000  &amp;#125;  // 返回取值器对象  return &amp;#123;    // 通过取值器方法访问静态变量    get:">
+<meta name="description" content="单例模式( Singleton )：确保只有一个实例，并提供全局访问
+
+命名空间( namespace )的管理
+命名空间：为了让代码更易懂，人们常常用单词或者拼音定义变量或者方法，但由于人们可用的单词或者汉字拼音是有限的，所有不同的人定义的变量使用的单词名称很有可能重复，此时就需要使用命名空间来约束每个人定义的变量来解决这类问题。
+
+1234567891011var BusinessGoIni">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式 - 单例模式(1)">
 <meta property="og:url" content="http://ntscshen.com/2017/02/06/设计模式 - 单例模式.html">
 <meta property="og:site_name" content="ntscshen">
-<meta property="og:description" content="管理静态变量123456789101112131415161718var Conf = (function()&amp;#123;  // 私有变量  var config = &amp;#123;    MAX_NUM: 100,    MIN_NUM:1,    COUNT: 1000  &amp;#125;  // 返回取值器对象  return &amp;#123;    // 通过取值器方法访问静态变量    get:">
-<meta property="og:updated_time" content="2017-02-07T03:42:34.000Z">
+<meta property="og:description" content="单例模式( Singleton )：确保只有一个实例，并提供全局访问
+
+命名空间( namespace )的管理
+命名空间：为了让代码更易懂，人们常常用单词或者拼音定义变量或者方法，但由于人们可用的单词或者汉字拼音是有限的，所有不同的人定义的变量使用的单词名称很有可能重复，此时就需要使用命名空间来约束每个人定义的变量来解决这类问题。
+
+1234567891011var BusinessGoIni">
+<meta property="og:updated_time" content="2017-02-07T05:28:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式 - 单例模式(1)">
-<meta name="twitter:description" content="管理静态变量123456789101112131415161718var Conf = (function()&amp;#123;  // 私有变量  var config = &amp;#123;    MAX_NUM: 100,    MIN_NUM:1,    COUNT: 1000  &amp;#125;  // 返回取值器对象  return &amp;#123;    // 通过取值器方法访问静态变量    get:">
+<meta name="twitter:description" content="单例模式( Singleton )：确保只有一个实例，并提供全局访问
+
+命名空间( namespace )的管理
+命名空间：为了让代码更易懂，人们常常用单词或者拼音定义变量或者方法，但由于人们可用的单词或者汉字拼音是有限的，所有不同的人定义的变量使用的单词名称很有可能重复，此时就需要使用命名空间来约束每个人定义的变量来解决这类问题。
+
+1234567891011var BusinessGoIni">
 
 
 
@@ -428,7 +443,18 @@
       
 
       
-        <h2 id="管理静态变量"><a href="#管理静态变量" class="headerlink" title="管理静态变量"></a>管理静态变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Conf = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// 私有变量</span></div><div class="line">  <span class="keyword">var</span> config = &#123;</div><div class="line">    <span class="attr">MAX_NUM</span>: <span class="number">100</span>,</div><div class="line">    <span class="attr">MIN_NUM</span>:<span class="number">1</span>,</div><div class="line">    <span class="attr">COUNT</span>: <span class="number">1000</span></div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 返回取值器对象</span></div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="comment">// 通过取值器方法访问静态变量</span></div><div class="line">    get: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> config[name] ? config[name] : <span class="literal">null</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div><div class="line"><span class="keyword">var</span> count = Conf.get(<span class="string">'COUNT'</span>);</div><div class="line"><span class="built_in">console</span>.log(count);<span class="comment">// 1000</span></div><div class="line"><span class="comment">// 静态变量只能访问，不能修改。并且无创建后就能使用</span></div></pre></td></tr></table></figure>
+        <blockquote>
+<p>单例模式( <strong>Singleton</strong> )：确保只有一个实例，并提供全局访问</p>
+</blockquote>
+<h2 id="命名空间-namespace-的管理"><a href="#命名空间-namespace-的管理" class="headerlink" title="命名空间( namespace )的管理"></a>命名空间( namespace )的管理</h2><blockquote>
+<p>命名空间：为了让代码更易懂，人们常常用单词或者拼音定义变量或者方法，但由于人们可用的单词或者汉字拼音是有限的，所有不同的人定义的变量使用的单词名称很有可能重复，此时就需要使用命名空间来约束每个人定义的变量来解决这类问题。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> BusinessGoInit = &#123;</div><div class="line">    <span class="attr">getServerTime</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 获取服务器时间戳</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">isUserVip</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 是否为会员</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">toShortUrl</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 短链接</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="模块分明"><a href="#模块分明" class="headerlink" title="模块分明"></a>模块分明</h2><blockquote>
+<p>通过单例模式来管理代码库的各个模块</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> A = &#123;</div><div class="line">    <span class="attr">Util</span>: &#123;</div><div class="line">        <span class="attr">util_method1</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        <span class="attr">util_method2</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">Tool</span>: &#123;</div><div class="line">        <span class="attr">tool_method1</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        <span class="attr">tool_method2</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">Ajax</span>: &#123;</div><div class="line">        <span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        <span class="attr">post</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">others</span>: &#123;</div><div class="line">        <span class="attr">xxx</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        <span class="attr">yyy</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="管理静态变量"><a href="#管理静态变量" class="headerlink" title="管理静态变量"></a>管理静态变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Conf = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 私有变量</span></div><div class="line">    <span class="keyword">var</span> config = &#123;</div><div class="line">            <span class="attr">MAX_NUM</span>: <span class="number">100</span>,</div><div class="line">            <span class="attr">MIN_NUM</span>: <span class="number">1</span>,</div><div class="line">            <span class="attr">COUNT</span>: <span class="number">1000</span></div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 返回取值器对象</span></div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="comment">// 通过取值器方法访问静态变量</span></div><div class="line">        get: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> config[name] ? config[name] : <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line"><span class="keyword">var</span> count = Conf.get(<span class="string">'COUNT'</span>);</div><div class="line"><span class="built_in">console</span>.log(count); <span class="comment">// 1000</span></div><div class="line"><span class="comment">// 静态变量只能访问，不能修改。并且无创建后就能使用</span></div></pre></td></tr></table></figure>
 <h2 id="惰性单例"><a href="#惰性单例" class="headerlink" title="惰性单例"></a>惰性单例</h2><blockquote>
 <p>惰性单例：在需要的时候才创建对象实例。惰性单例是单例模式的重点，这种技术在实际开发中非常有用。</p>
 </blockquote>
@@ -661,7 +687,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#管理静态变量"><span class="nav-number">1.</span> <span class="nav-text">管理静态变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#惰性单例"><span class="nav-number">2.</span> <span class="nav-text">惰性单例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间-namespace-的管理"><span class="nav-number">1.</span> <span class="nav-text">命名空间( namespace )的管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块分明"><span class="nav-number">2.</span> <span class="nav-text">模块分明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理静态变量"><span class="nav-number">3.</span> <span class="nav-text">管理静态变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#惰性单例"><span class="nav-number">4.</span> <span class="nav-text">惰性单例</span></a></li></ol></div>
             
 
           </div>
