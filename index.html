@@ -322,7 +322,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2017/02/06/惰性单例.html">
+  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2017/02/06/设计模式 - 单例模式.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ntscshen">
@@ -347,8 +347,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/06/惰性单例.html" itemprop="url">
-                  惰性单例
+                <a class="post-title-link" href="/2017/02/06/设计模式 - 单例模式.html" itemprop="url">
+                  设计模式 - 单例模式(1)
                 </a>
               
             
@@ -396,8 +396,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2017/02/06/惰性单例.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/06/惰性单例.html" itemprop="commentCount"></span>
+                <a href="/2017/02/06/设计模式 - 单例模式.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/06/设计模式 - 单例模式.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,7 +407,7 @@
 
           
           
-             <span id="/2017/02/06/惰性单例.html" class="leancloud_visitors" data-flag-title="惰性单例">
+             <span id="/2017/02/06/设计模式 - 单例模式.html" class="leancloud_visitors" data-flag-title="设计模式 - 单例模式(1)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,14 +434,11 @@
       
         
           
-          
-惰性单例：在需要的时候才创建对象实例。惰性单例是单例模式的重点，这种技术在实际开发中非常有用，有用的成都可能超出我们的想象。
-
-12345678910111213141516171819202122232425262728// 惰性单例// 接下来将用于创建 录  的方法用参数 fn 的形式传入 getSingle，我们不仅可以传入 createLoginLayer，还能传入 createScript、createIframe、createXhr 等。之后再让 getSingle 返回 一个新的函数，并且用一个变量 result 来保存 fn 的计算结果。result 变量因为身在闭包中，它永远不会被销毁。在将来的请求中，如果re
+          管理静态变量123456789101112131415161718var Conf = (function()&#123;  // 私有变量  var config = &#123;    MAX_NUM: 100,    MIN_NUM:1,    COUNT: 1000  &#125;  // 返回取值器对象  return &#123;    // 通过取值器方法访问静态变量    get: function(name)&#123;      return config[name] ? config[name] : null;    &#125;  &#125;&#125;)();var count = Conf.get('C
           ...
           <!--noindex-->
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/06/惰性单例.html#more" rel="contents">
+            <a class="btn" href="/2017/02/06/设计模式 - 单例模式.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
