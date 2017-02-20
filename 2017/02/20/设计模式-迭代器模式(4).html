@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -85,15 +85,28 @@
 
 
 
-<meta name="description" content="天行健，君子以自强不息">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ntscshen">
-<meta property="og:url" content="http://ntscshen.com/categories/jQuery/index.html">
+<meta name="description" content="迭代器模式：在不暴露对象内部结构的同时，可以顺序地访问聚合对象内部的元素。
+迭代器是优化循环语句的一种可行方案，它使得程序清晰易读。
+在开发中，迭代器极大简化了代码中的循环语句，使代码结构清晰紧凑，然而这些简化了的循环语句实质上隐形地移到了迭代器中，这也解决了对象的使用者与对象内部结构之间的耦合。
+
+123456789101112131415161718192021222324252627282">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-迭代器模式(4)">
+<meta property="og:url" content="http://ntscshen.com/2017/02/20/设计模式-迭代器模式(4).html">
 <meta property="og:site_name" content="ntscshen">
-<meta property="og:description" content="天行健，君子以自强不息">
+<meta property="og:description" content="迭代器模式：在不暴露对象内部结构的同时，可以顺序地访问聚合对象内部的元素。
+迭代器是优化循环语句的一种可行方案，它使得程序清晰易读。
+在开发中，迭代器极大简化了代码中的循环语句，使代码结构清晰紧凑，然而这些简化了的循环语句实质上隐形地移到了迭代器中，这也解决了对象的使用者与对象内部结构之间的耦合。
+
+123456789101112131415161718192021222324252627282">
+<meta property="og:updated_time" content="2017-02-20T09:36:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ntscshen">
-<meta name="twitter:description" content="天行健，君子以自强不息">
+<meta name="twitter:title" content="设计模式-迭代器模式(4)">
+<meta name="twitter:description" content="迭代器模式：在不暴露对象内部结构的同时，可以顺序地访问聚合对象内部的元素。
+迭代器是优化循环语句的一种可行方案，它使得程序清晰易读。
+在开发中，迭代器极大简化了代码中的循环语句，使代码结构清晰紧凑，然而这些简化了的循环语句实质上隐形地移到了迭代器中，这也解决了对象的使用者与对象内部结构之间的耦合。
+
+123456789101112131415161718192021222324252627282">
 
 
 
@@ -121,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://ntscshen.com/categories/jQuery/"/>
+  <link rel="canonical" href="http://ntscshen.com/2017/02/20/设计模式-迭代器模式(4).html"/>
 
 
 
 
 
-  <title> 分类: jQuery | ntscshen </title>
+  <title> 设计模式-迭代器模式(4) | ntscshen </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -167,7 +180,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -310,75 +323,209 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        jQuery
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/18/页面操作iFrame的Dom.html" itemprop="url">
-              
-                <span itemprop="name">页面操作iFrame的Dom</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-18T17:13:42+08:00"
-              content="2016-11-18" >
-          11-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/01/页面性能管理.html" itemprop="url">
-              
-                <span itemprop="name">页面性能管理</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-01T09:08:57+08:00"
-              content="2016-09-01" >
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2017/02/20/设计模式-迭代器模式(4).html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="ntscshen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://occeqxmsk.bkt.clouddn.com/bamboo.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="ntscshen">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="ntscshen" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                设计模式-迭代器模式(4)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-20T16:40:15+08:00">
+                2017-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/02/20/设计模式-迭代器模式(4).html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/设计模式-迭代器模式(4).html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/20/设计模式-迭代器模式(4).html" class="leancloud_visitors" data-flag-title="设计模式-迭代器模式(4)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>迭代器模式：在不暴露对象内部结构的同时，可以顺序地访问聚合对象内部的元素。</p>
+<p>迭代器是优化循环语句的一种可行方案，它使得程序清晰易读。</p>
+<p>在开发中，迭代器极大简化了代码中的循环语句，使代码结构清晰紧凑，然而这些简化了的循环语句实质上隐形地移到了迭代器中，这也解决了对象的使用者与对象内部结构之间的耦合。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 传统的逻辑：if条件分支</span></div><div class="line"><span class="comment">// 根据不同的浏览器，选择不同的删除方式</span></div><div class="line"><span class="comment">// 函数getUploadObj中充斥了 try-cache和if-else条件分支</span></div><div class="line"><span class="keyword">var</span> getUploadObj = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject(<span class="string">"TXFTNActiveX.FTNUpload"</span>);</div><div class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">        <span class="keyword">if</span> (supportFlash()) &#123;</div><div class="line">            <span class="keyword">var</span> str = <span class="string">'&lt;object type="application/x-shockwave-flash"&gt;&lt;/object&gt;'</span>;</div><div class="line">            <span class="keyword">return</span> $(str).appendTo($(<span class="string">'body'</span>));</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">var</span> str = <span class="string">'&lt;input name="file" type="file"/&gt;'</span></div><div class="line">            <span class="keyword">return</span> $(str).appendTo($(<span class="string">'body'</span>));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 改进：迭代器模式</span></div><div class="line"><span class="comment">// IE上传控件</span></div><div class="line"><span class="keyword">var</span> getActiveUploadObj = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject(<span class="string">"TXFTNActiveX.FTNUpload"</span>);</div><div class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="comment">// flash</span></div><div class="line"><span class="keyword">var</span> getFlashUploadObj = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (supportFlash()) &#123;</div><div class="line">        <span class="keyword">var</span> str = <span class="string">'&lt;object type="application/x-shockwave-flash"&gt;&lt;/object&gt;'</span>;</div><div class="line">        <span class="keyword">return</span> $(str).appendTo($(<span class="string">'body'</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;;</div><div class="line"><span class="comment">// Form表单上传</span></div><div class="line"><span class="keyword">var</span> getFormUploadObj = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> str = <span class="string">'&lt;input name="file" type="file"/&gt;'</span></div><div class="line">    <span class="keyword">return</span> $(str).appendTo($(<span class="string">'body'</span>));</div><div class="line">&#125;;</div><div class="line"><span class="comment">// 把判断中的每一个条件内容进行封装在函数中。使用迭代器模式进行迭代循环</span></div><div class="line"><span class="keyword">var</span> iteratorUploadObj = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = <span class="built_in">arguments</span>[i++]) &#123;</div><div class="line">        <span class="keyword">var</span> uploadObj = fn();</div><div class="line">        <span class="keyword">if</span> (uploadObj !== <span class="literal">false</span>) &#123;</div><div class="line">            <span class="keyword">return</span> uploadObj;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> uploadObj = iteratorUploadObj(getActiveUploadObj, getFlashUploadObj, getFlashUploadObj);</div><div class="line"><span class="comment">/**</span></div><div class="line"> * 获取不同上传对象的方法被隔离在各自的函数里互不干扰，</div><div class="line"> * try、catch和if条件分支不在纠缠在一起，</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="comment">// 所有模式的核心是：单一职责原则：应该只有一个引起变化的原因，如果对象承担了多项职责，这就意味着这个对象将变得巨大，引起它变化的原因可能会有多个。。。😀</span></div><div class="line"><span class="comment">// 每个函数都是独立单一的模块。不承担多余的职责。对象的改变也不会引起其他代码的一连串反应</span></div><div class="line"><span class="comment">// 每一个功能独立封装(正确：return true。错误：return false)。再使用一个函数进行逻辑判断( 迭代定义的函数、正确的话则、停止参数否则继续执行 )</span></div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/MSite.png" alt="ntscshen wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫、用手机访问本站😈</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/20/设计模式-代理模式(3).html" rel="next" title="设计模式-代理模式(3)">
+                <i class="fa fa-chevron-left"></i> 设计模式-代理模式(3)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/02/20/设计模式-迭代器模式(4).html"
+     data-title="设计模式-迭代器模式(4)"
+     data-content=""
+     data-url="http://ntscshen.com/2017/02/20/设计模式-迭代器模式(4).html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -386,6 +533,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/20/设计模式-迭代器模式(4).html"
+           data-title="设计模式-迭代器模式(4)" data-url="http://ntscshen.com/2017/02/20/设计模式-迭代器模式(4).html">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -598,6 +753,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
