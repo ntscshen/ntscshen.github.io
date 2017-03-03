@@ -85,37 +85,37 @@
 
 
 
-<meta name="description" content="添加ssh key到Github首先先确认是否已经存在公钥了( SSH Keys )
+<meta name="description" content="添加ssh key到Github什么是SSH?
+简单说，SSH是一种网络协议，用于计算机之间的加密登录。
+如果一个用户从本地计算机，使用SSH协议登录另一台远程计算机，我们就可以认为，这种登录是安全的，即使被中途截获，密码也不会泄露。
+
+首先先确认是否已经存在公钥了( SSH Keys )
 1ls -al ~/.ssh
 
-若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将SSH key添加到Github中
-
-生成SSH 公钥1ssh-keygen -t rsa -C &quot;注释内容，一般为邮件地址 xxx@163.com&quot;
-接着会显示以下的输出
-12345678910111213">
+若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH Key到Github">
 <meta property="og:url" content="http://ntscshen.com/2016/08/18/添加SSH Key到Github.html">
 <meta property="og:site_name" content="ntscshen">
-<meta property="og:description" content="添加ssh key到Github首先先确认是否已经存在公钥了( SSH Keys )
+<meta property="og:description" content="添加ssh key到Github什么是SSH?
+简单说，SSH是一种网络协议，用于计算机之间的加密登录。
+如果一个用户从本地计算机，使用SSH协议登录另一台远程计算机，我们就可以认为，这种登录是安全的，即使被中途截获，密码也不会泄露。
+
+首先先确认是否已经存在公钥了( SSH Keys )
 1ls -al ~/.ssh
 
-若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将SSH key添加到Github中
-
-生成SSH 公钥1ssh-keygen -t rsa -C &quot;注释内容，一般为邮件地址 xxx@163.com&quot;
-接着会显示以下的输出
-12345678910111213">
-<meta property="og:updated_time" content="2017-03-03T06:52:44.000Z">
+若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将S">
+<meta property="og:updated_time" content="2017-03-03T07:23:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH Key到Github">
-<meta name="twitter:description" content="添加ssh key到Github首先先确认是否已经存在公钥了( SSH Keys )
+<meta name="twitter:description" content="添加ssh key到Github什么是SSH?
+简单说，SSH是一种网络协议，用于计算机之间的加密登录。
+如果一个用户从本地计算机，使用SSH协议登录另一台远程计算机，我们就可以认为，这种登录是安全的，即使被中途截获，密码也不会泄露。
+
+首先先确认是否已经存在公钥了( SSH Keys )
 1ls -al ~/.ssh
 
-若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将SSH key添加到Github中
-
-生成SSH 公钥1ssh-keygen -t rsa -C &quot;注释内容，一般为邮件地址 xxx@163.com&quot;
-接着会显示以下的输出
-12345678910111213">
+若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将S">
 
 
 
@@ -449,7 +449,11 @@
       
 
       
-        <h2 id="添加ssh-key到Github"><a href="#添加ssh-key到Github" class="headerlink" title="添加ssh key到Github"></a>添加ssh key到Github</h2><p>首先先确认是否已经存在公钥了( SSH Keys )</p>
+        <h2 id="添加ssh-key到Github"><a href="#添加ssh-key到Github" class="headerlink" title="添加ssh key到Github"></a>添加ssh key到Github</h2><h3 id="什么是SSH"><a href="#什么是SSH" class="headerlink" title="什么是SSH?"></a>什么是SSH?</h3><blockquote>
+<p>简单说，SSH是一种网络协议，用于计算机之间的加密登录。</p>
+<p>如果一个用户从本地计算机，使用SSH协议登录另一台远程计算机，我们就可以认为，这种登录是安全的，即使被中途截获，密码也不会泄露。</p>
+</blockquote>
+<p>首先先确认是否已经存在公钥了( SSH Keys )</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~<span class="regexp">/.ssh</span></div></pre></td></tr></table></figure>
 <ul>
 <li>若存在<code>id_rsa</code>或<code>id_rsa.pub</code>。则代表已经生成过Key值、直接将SSH key添加到Github中</li>
@@ -627,7 +631,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -636,7 +640,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -705,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加ssh-key到Github"><span class="nav-number">1.</span> <span class="nav-text">添加ssh key到Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成SSH-公钥"><span class="nav-number">2.</span> <span class="nav-text">生成SSH 公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同的操作系统，均有一些命令，直接将SSH-key从文件拷贝到粘贴板中，如下："><span class="nav-number">3.</span> <span class="nav-text">不同的操作系统，均有一些命令，直接将SSH key从文件拷贝到粘贴板中，如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误处理"><span class="nav-number">4.</span> <span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数说明"><span class="nav-number">5.</span> <span class="nav-text">参数说明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加ssh-key到Github"><span class="nav-number">1.</span> <span class="nav-text">添加ssh key到Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是SSH"><span class="nav-number">1.1.</span> <span class="nav-text">什么是SSH?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成SSH-公钥"><span class="nav-number">2.</span> <span class="nav-text">生成SSH 公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同的操作系统，均有一些命令，直接将SSH-key从文件拷贝到粘贴板中，如下："><span class="nav-number">3.</span> <span class="nav-text">不同的操作系统，均有一些命令，直接将SSH key从文件拷贝到粘贴板中，如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误处理"><span class="nav-number">4.</span> <span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数说明"><span class="nav-number">5.</span> <span class="nav-text">参数说明</span></a></li></ol></div>
             
 
           </div>
