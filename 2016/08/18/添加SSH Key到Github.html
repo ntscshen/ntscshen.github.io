@@ -105,7 +105,8 @@
 1ls -al ~/.ssh
 
 若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将S">
-<meta property="og:updated_time" content="2017-03-03T08:17:58.000Z">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/082005.jpg">
+<meta property="og:updated_time" content="2017-03-03T08:20:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH Key到Github">
 <meta name="twitter:description" content="添加ssh key到Github什么是SSH?
@@ -116,6 +117,7 @@
 1ls -al ~/.ssh
 
 若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将S">
+<meta name="twitter:image" content="http://occeqxmsk.bkt.clouddn.com/082005.jpg">
 
 
 
@@ -493,6 +495,7 @@
 <h4 id="生成并添加第二个SSH-Key"><a href="#生成并添加第二个SSH-Key" class="headerlink" title="生成并添加第二个SSH Key"></a>生成并添加第二个SSH Key</h4><p><code>ssh-keygen -t rsa -C &quot;注释内容，一般为邮件地址 xxx@163.com&quot;</code> </p>
 <p>注意此处不要一路回车,否则邮箱将覆盖上一次生成的ssh key,要给这个文件起个名字,例如 <code>id_rsa_GitLab</code> ,默认的是 <code>id_rsa</code> </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 在.ssh目录下的 添加gitLab配置项</div><div class="line"># gitLab</div><div class="line">Host xxx.xxx.cn</div><div class="line">User xxx@xxx.com</div><div class="line">Hostname xxx.xxx.cn</div><div class="line">PreferredAuthentications publickey</div><div class="line">IdentityFile ~/.ssh/id_rsa_GitLab</div></pre></td></tr></table></figure>
+<h5 id="测试是否连通"><a href="#测试是否连通" class="headerlink" title="测试是否连通"></a>测试是否连通</h5><p><img src="http://occeqxmsk.bkt.clouddn.com/082005.jpg" alt="http://occeqxmsk.bkt.clouddn.com/082005.jpg"></p>
 
       
     </div>
@@ -529,6 +532,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/18/Workflow工作流.html" rel="next" title="gitflow Workflow工作流">
+                <i class="fa fa-chevron-left"></i> gitflow Workflow工作流
+              </a>
             
           </div>
 
@@ -624,12 +631,12 @@
                src="http://occeqxmsk.bkt.clouddn.com/bamboo.jpg"
                alt="ntscshen" />
           <p class="site-author-name" itemprop="name">ntscshen</p>
-          <p class="site-description motion-element" itemprop="description">天行健，君子以自强不息</p>
+          <p class="site-description motion-element" itemprop="description">无他,唯手熟耳</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -696,6 +703,10 @@
                   <a href="http://ntscshen.com" title="ntscshen" target="_blank">ntscshen</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://svend.cc" title="Svend" target="_blank">Svend</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -715,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加ssh-key到Github"><span class="nav-number">1.</span> <span class="nav-text">添加ssh key到Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是SSH"><span class="nav-number">1.1.</span> <span class="nav-text">什么是SSH?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成SSH-公钥"><span class="nav-number">2.</span> <span class="nav-text">生成SSH 公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同的操作系统，均有一些命令，直接将SSH-key从文件拷贝到粘贴板中，如下："><span class="nav-number">3.</span> <span class="nav-text">不同的操作系统，均有一些命令，直接将SSH key从文件拷贝到粘贴板中，如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误处理"><span class="nav-number">4.</span> <span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数说明"><span class="nav-number">5.</span> <span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同时管理多个SSH-Key"><span class="nav-number">6.</span> <span class="nav-text">同时管理多个SSH Key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成并添加第二个SSH-Key"><span class="nav-number">6.0.1.</span> <span class="nav-text">生成并添加第二个SSH Key</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加ssh-key到Github"><span class="nav-number">1.</span> <span class="nav-text">添加ssh key到Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是SSH"><span class="nav-number">1.1.</span> <span class="nav-text">什么是SSH?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成SSH-公钥"><span class="nav-number">2.</span> <span class="nav-text">生成SSH 公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同的操作系统，均有一些命令，直接将SSH-key从文件拷贝到粘贴板中，如下："><span class="nav-number">3.</span> <span class="nav-text">不同的操作系统，均有一些命令，直接将SSH key从文件拷贝到粘贴板中，如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误处理"><span class="nav-number">4.</span> <span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数说明"><span class="nav-number">5.</span> <span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同时管理多个SSH-Key"><span class="nav-number">6.</span> <span class="nav-text">同时管理多个SSH Key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成并添加第二个SSH-Key"><span class="nav-number">6.0.1.</span> <span class="nav-text">生成并添加第二个SSH Key</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#测试是否连通"><span class="nav-number">6.0.1.1.</span> <span class="nav-text">测试是否连通</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
