@@ -12,7 +12,8 @@
     <entry>
       <title><![CDATA[Git使用指南-1]]></title>
       <url>http://ntscshen.com/2017/03/03/SourceTree:Git%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97.html</url>
-      <content type="html"><![CDATA[<h5 id="场景1：创建仓库-提交代码"><a href="#场景1：创建仓库-提交代码" class="headerlink" title="场景1：创建仓库,提交代码"></a>场景1：创建仓库,提交代码</h5><h5 id="场景2：通过分支-来完成个人工作"><a href="#场景2：通过分支-来完成个人工作" class="headerlink" title="场景2：通过分支,来完成个人工作"></a>场景2：通过分支,来完成个人工作</h5><h5 id="场景3：多人协作-分支-解决冲突"><a href="#场景3：多人协作-分支-解决冲突" class="headerlink" title="场景3：多人协作,分支 + 解决冲突"></a>场景3：多人协作,分支 + 解决冲突</h5><ul>
+      <content type="html"><![CDATA[<p><a href="https://github.com/Mark24Code/15minGit" target="_blank" rel="external">飞机票：https://github.com/Mark24Code/15minGitSourceTree/Git轻指南</a></p>
+<h5 id="场景1：创建仓库-提交代码"><a href="#场景1：创建仓库-提交代码" class="headerlink" title="场景1：创建仓库,提交代码"></a>场景1：创建仓库,提交代码</h5><h5 id="场景2：通过分支-来完成个人工作"><a href="#场景2：通过分支-来完成个人工作" class="headerlink" title="场景2：通过分支,来完成个人工作"></a>场景2：通过分支,来完成个人工作</h5><h5 id="场景3：多人协作-分支-解决冲突"><a href="#场景3：多人协作-分支-解决冲突" class="headerlink" title="场景3：多人协作,分支 + 解决冲突"></a>场景3：多人协作,分支 + 解决冲突</h5><ul>
 <li>创建git仓库</li>
 <li>基本的提交操作</li>
 <li>分支与合并</li>
@@ -1227,22 +1228,6 @@
     
     <entry>
       <title><![CDATA[css如何居中一个浮动元素]]></title>
-      <url>http://ntscshen.com/2016/08/30/%E6%AF%8F%E6%97%A5ES6%20-%20let%E5%92%8Cvar%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
-      <content type="html"><![CDATA[<h2 id="let和var的区别"><a href="#let和var的区别" class="headerlink" title="let和var的区别"></a><strong>let和var的区别</strong></h2><ul>
-<li>块级作用域：用let定义的变量只在定义它的块中有效</li>
-<li>不会变量提升、为声明前使用、直接报错。</li>
-<li>let会暂时性死区、一但快内let声明了a、全局变量a将不会起作用</li>
-<li>let不允许在相同作用域内、重复声明同一个变量<blockquote>
-<p>为什么引进块级作用域？<br>for循环的i变量控制循环、防止泄露<br>在ES6之前 - JS没有块级作用域</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// function要注意的规范</span></div><div class="line"><span class="comment">// 应该避免在块级作用域内声明函数、如果确实需要、也应该写成函数表达式、而不是函数式声明</span></div><div class="line"><span class="comment">// 函数式声明</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="string">"shen"</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 函数表达式</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="string">"yang"</span>;</div><div class="line">  <span class="keyword">let</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[css如何居中一个浮动元素]]></title>
       <url>http://ntscshen.com/2016/08/30/%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%ADdiv%EF%BC%9F%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0.html</url>
       <content type="html"><![CDATA[<h2 id="如何利用CSS居中一个浮动元素"><a href="#如何利用CSS居中一个浮动元素" class="headerlink" title="如何利用CSS居中一个浮动元素"></a>如何利用CSS居中一个浮动元素</h2><blockquote>
 <ul>
@@ -1317,6 +1302,22 @@
 <li>通配符</li>
 <li><code>!important</code>除外</li>
 </ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[css如何居中一个浮动元素]]></title>
+      <url>http://ntscshen.com/2016/08/30/%E6%AF%8F%E6%97%A5ES6%20-%20let%E5%92%8Cvar%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
+      <content type="html"><![CDATA[<h2 id="let和var的区别"><a href="#let和var的区别" class="headerlink" title="let和var的区别"></a><strong>let和var的区别</strong></h2><ul>
+<li>块级作用域：用let定义的变量只在定义它的块中有效</li>
+<li>不会变量提升、为声明前使用、直接报错。</li>
+<li>let会暂时性死区、一但快内let声明了a、全局变量a将不会起作用</li>
+<li>let不允许在相同作用域内、重复声明同一个变量<blockquote>
+<p>为什么引进块级作用域？<br>for循环的i变量控制循环、防止泄露<br>在ES6之前 - JS没有块级作用域</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// function要注意的规范</span></div><div class="line"><span class="comment">// 应该避免在块级作用域内声明函数、如果确实需要、也应该写成函数表达式、而不是函数式声明</span></div><div class="line"><span class="comment">// 函数式声明</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="string">"shen"</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 函数表达式</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="string">"yang"</span>;</div><div class="line">  <span class="keyword">let</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
