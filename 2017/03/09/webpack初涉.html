@@ -85,16 +85,45 @@
 
 
 
-<meta name="description" content="无他,唯手熟耳">
+<meta name="description" content="在写此文章时：正直webpack2.2发布没多久。
+webpack1.x和webpack2.x 整体上只有稍许区别，其他都一样
+
+一个entry
+一个output
+一个loaders
+一个plugins
+
+最大的不同在于解析器的不同，基本上都是在做减法，将配置信息变得不那么容易写错，以及更好的命名规则
+我想升级webpack2得到最大的收益就是：ES6规范的优化。意味着可以直接使用 import">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack初涉">
 <meta property="og:url" content="http://ntscshen.com/2017/03/09/webpack初涉.html">
 <meta property="og:site_name" content="ntscshen">
-<meta property="og:description" content="无他,唯手熟耳">
-<meta property="og:updated_time" content="2017-03-09T09:52:32.000Z">
+<meta property="og:description" content="在写此文章时：正直webpack2.2发布没多久。
+webpack1.x和webpack2.x 整体上只有稍许区别，其他都一样
+
+一个entry
+一个output
+一个loaders
+一个plugins
+
+最大的不同在于解析器的不同，基本上都是在做减法，将配置信息变得不那么容易写错，以及更好的命名规则
+我想升级webpack2得到最大的收益就是：ES6规范的优化。意味着可以直接使用 import">
+<meta property="og:image" content="http://occeqxmsk.bkt.clouddn.com/023739.jpg">
+<meta property="og:updated_time" content="2017-03-13T09:26:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack初涉">
-<meta name="twitter:description" content="无他,唯手熟耳">
+<meta name="twitter:description" content="在写此文章时：正直webpack2.2发布没多久。
+webpack1.x和webpack2.x 整体上只有稍许区别，其他都一样
+
+一个entry
+一个output
+一个loaders
+一个plugins
+
+最大的不同在于解析器的不同，基本上都是在做减法，将配置信息变得不那么容易写错，以及更好的命名规则
+我想升级webpack2得到最大的收益就是：ES6规范的优化。意味着可以直接使用 import">
+<meta name="twitter:image" content="http://occeqxmsk.bkt.clouddn.com/023739.jpg">
 
 
 
@@ -428,7 +457,42 @@
       
 
       
-        
+        <blockquote>
+<p>在写此文章时：正直webpack2.2发布没多久。</p>
+<p>webpack1.x和webpack2.x 整体上只有稍许区别，其他都一样</p>
+<ul>
+<li>一个entry</li>
+<li>一个output</li>
+<li>一个loaders</li>
+<li>一个plugins</li>
+</ul>
+<p>最大的不同在于解析器的不同，基本上都是在做减法，将配置信息变得不那么容易写错，以及更好的命名规则</p>
+<p>我想升级webpack2得到最大的收益就是：ES6规范的优化。意味着可以直接使用 import 以及 export,而不必再来一次CommonJS模块处理</p>
+</blockquote>
+<h6 id="定义默认的npm-init"><a href="#定义默认的npm-init" class="headerlink" title="定义默认的npm init"></a>定义默认的npm init</h6><blockquote>
+<p>如果你厌倦了每次开始一个新的项目、都需要重新输入同样的信息，可以使用 <code>-y</code>标记表示你能接受 <code>package.json</code> 文件的一堆默认值</p>
+</blockquote>
+<h6 id="配合npm使用"><a href="#配合npm使用" class="headerlink" title="配合npm使用"></a>配合npm使用</h6><blockquote>
+<p>CLI这种方式运行 <code>webpack</code> 不是特别方便。我们可以设置一些快捷方式</p>
+<p>在 <code>package.json</code> 中的 <code>scripts</code> 内添加CLI中的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; &#123;</div><div class="line">&gt;   ...</div><div class="line">&gt;   &quot;scripts&quot;: &#123;</div><div class="line">&gt;     &quot;start&quot;: &quot;webpack&quot;</div><div class="line">&gt;   &#125;,</div><div class="line">&gt;   ...</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p>这样就可以通过 <code>npm run start</code> 命令来实现与上面相同的效果。</p>
+<p>npm通过命令选取脚本,并临时修补执行环境,使脚本可以在运行时包含bin命令。</p>
+<p>如果你在项目中使用了npm执行脚本,npm <strong>首先</strong> 会在你的本地模块中寻找webpack。</p>
+<p><img src="http://occeqxmsk.bkt.clouddn.com/023739.jpg" alt="http://occeqxmsk.bkt.clouddn.com/023739.jpg"></p>
+</blockquote>
+<h4 id="生产环境的构建"><a href="#生产环境的构建" class="headerlink" title="生产环境的构建"></a>生产环境的构建</h4><h6 id="JS文件压缩"><a href="#JS文件压缩" class="headerlink" title="JS文件压缩"></a>JS文件压缩</h6><blockquote>
+<p>webpack自带 <code>UglifyJsPlugin</code> </p>
+</blockquote>
+<h6 id="手动方式：为多环境配置Webpack"><a href="#手动方式：为多环境配置Webpack" class="headerlink" title="手动方式：为多环境配置Webpack"></a>手动方式：为多环境配置Webpack</h6><blockquote>
+<p>当我们有针对多种环境分别配置的需求时,最简单的方式就是为不同的环境编写独立</p>
+</blockquote>
+<h4 id="Webpack插件-Plugins"><a href="#Webpack插件-Plugins" class="headerlink" title="Webpack插件( Plugins )"></a>Webpack插件( Plugins )</h4><blockquote>
+<p>webpack自身也是构建在同样的插件系统上！插件的目的是在于解决 <code>loader</code> 无法实现的其他事。</p>
+</blockquote>
+<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><h6 id="最简单的配置"><a href="#最简单的配置" class="headerlink" title="最简单的配置"></a>最简单的配置</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./foo.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'dist'</span>),</div><div class="line">    <span class="attr">filename</span>: <span class="string">'foo.bundle.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="多个目标"><a href="#多个目标" class="headerlink" title="多个目标"></a>多个目标</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webapck'</span>);</div><div class="line"><span class="keyword">var</span> webpackMerge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> baseConfig = &#123;</div><div class="line">  <span class="attr">target</span>:<span class="string">'async-node'</span>,</div><div class="line">  <span class="attr">entry</span>:&#123;</div><div class="line">    <span class="attr">entry</span>:<span class="string">'./entry.js'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">output</span>:&#123;</div><div class="line">    <span class="attr">path</span>:path.resolve(__dirname,<span class="string">'dist'</span>),</div><div class="line">    <span class="attr">filename</span>:<span class="string">'[name].js'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>:[</div><div class="line">    <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">      <span class="attr">name</span>:<span class="string">'inline'</span>,</div><div class="line">      <span class="attr">filename</span>:<span class="string">'inline.js'</span>,</div><div class="line">      <span class="attr">minChunks</span>:<span class="literal">Infinity</span></div><div class="line">    &#125;),</div><div class="line">    <span class="keyword">new</span> webpack.optimize.AggressiveSplittingPlugin(&#123;</div><div class="line">      <span class="attr">minSize</span>:<span class="number">5000</span>,</div><div class="line">      <span class="attr">maxSize</span>:<span class="number">10000</span></div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">&#125;;</div><div class="line"><span class="built_in">module</span>.exports = targets;</div><div class="line"><span class="comment">// es6写法</span></div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -543,8 +607,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://occeqxmsk.bkt.clouddn.com/bamboo.jpg"
@@ -635,6 +708,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#定义默认的npm-init"><span class="nav-number">1.</span> <span class="nav-text">定义默认的npm init</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#配合npm使用"><span class="nav-number">2.</span> <span class="nav-text">配合npm使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生产环境的构建"><span class="nav-number"></span> <span class="nav-text">生产环境的构建</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#JS文件压缩"><span class="nav-number">1.</span> <span class="nav-text">JS文件压缩</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#手动方式：为多环境配置Webpack"><span class="nav-number">2.</span> <span class="nav-text">手动方式：为多环境配置Webpack</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Webpack插件-Plugins"><span class="nav-number"></span> <span class="nav-text">Webpack插件( Plugins )</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置"><span class="nav-number"></span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#最简单的配置"><span class="nav-number">1.</span> <span class="nav-text">最简单的配置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#多个目标"><span class="nav-number">2.</span> <span class="nav-text">多个目标</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
     </div>
   </aside>

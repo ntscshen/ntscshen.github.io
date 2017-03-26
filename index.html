@@ -435,7 +435,22 @@
         
           
           
-          
+在写此文章时：正直webpack2.2发布没多久。
+webpack1.x和webpack2.x 整体上只有稍许区别，其他都一样
+
+一个entry
+一个output
+一个loaders
+一个plugins
+
+最大的不同在于解析器的不同，基本上都是在做减法，将配置信息变得不那么容易写错，以及更好的命名规则
+我想升级webpack2得到最大的收益就是：ES6规范的优化。意味着可以直接使用 import 以及 export,而不必再来一次CommonJS模块处理
+
+定义默认的npm init
+如果你厌倦了每次开始一个新的项目、都需要重新输入同样的信息，可以使用 -y标记表示你能接受 package.json 文件的一堆默认值
+
+配合npm
+          ...
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/03/09/webpack初涉.html#more" rel="contents">
