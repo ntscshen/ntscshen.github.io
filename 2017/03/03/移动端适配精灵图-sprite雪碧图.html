@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="布局," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -85,7 +85,7 @@
 
 
 
-<meta name="description" content="移动端精灵图可以使用按照PC端的进行移植、只是把 
+<meta name="description" content="移动端精灵图可以使用按照PC端的进行移植、只是把
  background-position: 1rem 3.1rem; 对应的px转换成rem即可
 大体上这样适配没什么问题,如果公司要求不是很严格的话
 在一些手机里面,会有一切缺陷,有些图片少了那么1px。但是本着进益求精的原则，解决方案总结如下：(使用百分比方式、需要sass的mixin进行封装)
@@ -95,17 +95,17 @@ background-position详解">
 <meta property="og:title" content="移动端适配精灵图(sprite雪碧图)">
 <meta property="og:url" content="http://ntscshen.com/2017/03/03/移动端适配精灵图-sprite雪碧图.html">
 <meta property="og:site_name" content="ntscshen">
-<meta property="og:description" content="移动端精灵图可以使用按照PC端的进行移植、只是把 
+<meta property="og:description" content="移动端精灵图可以使用按照PC端的进行移植、只是把
  background-position: 1rem 3.1rem; 对应的px转换成rem即可
 大体上这样适配没什么问题,如果公司要求不是很严格的话
 在一些手机里面,会有一切缺陷,有些图片少了那么1px。但是本着进益求精的原则，解决方案总结如下：(使用百分比方式、需要sass的mixin进行封装)
 
 background-position详解">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1985420-02914366757db774.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-03T06:12:20.000Z">
+<meta property="og:updated_time" content="2017-03-28T06:15:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端适配精灵图(sprite雪碧图)">
-<meta name="twitter:description" content="移动端精灵图可以使用按照PC端的进行移植、只是把 
+<meta name="twitter:description" content="移动端精灵图可以使用按照PC端的进行移植、只是把
  background-position: 1rem 3.1rem; 对应的px转换成rem即可
 大体上这样适配没什么问题,如果公司要求不是很严格的话
 在一些手机里面,会有一切缺陷,有些图片少了那么1px。但是本着进益求精的原则，解决方案总结如下：(使用百分比方式、需要sass的mixin进行封装)
@@ -394,8 +394,8 @@ background-position详解">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/布局/" itemprop="url" rel="index">
-                    <span itemprop="name">布局</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -446,7 +446,7 @@ background-position详解">
 
       
         <blockquote>
-<p>移动端精灵图可以使用按照PC端的进行移植、只是把 </p>
+<p>移动端精灵图可以使用按照PC端的进行移植、只是把</p>
 <p> <code>background-position: 1rem 3.1rem;</code> 对应的px转换成rem即可</p>
 <p>大体上这样适配没什么问题,如果公司要求不是很严格的话</p>
 <p>在一些手机里面,会有一切缺陷,有些图片少了那么1px。但是本着进益求精的原则，解决方案总结如下：(使用百分比方式、需要sass的mixin进行封装)</p>
@@ -455,7 +455,7 @@ background-position详解">
 <ul>
 <li><p>属性值为百分比时，将以图片的 <strong>中心点</strong> 为基准计算其相对位置。</p>
 <ul>
-<li><p>W3C怎么说： </p>
+<li><p>W3C怎么说：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;     With a value pair of '0% 0%', the upper left corner of the image is aligned with the upper left corner of the box's. A value pair of '100% 100%' places the lower right corner of the image in the lower right corner of padding area. With a value pair of '14% 84%', the point 14% across and 84% down the image is to be placed at the point 14% across and 84% down the padding area.</div><div class="line">&gt;     我这渣渣英语翻译大致如下：</div><div class="line">&gt;     1、background-position: 0% 0%;图像的左上角和父级的左上角对齐</div><div class="line">&gt;     2、background-position: 100% 100%;图像的右下角和父级的右下角对齐</div><div class="line">&gt;     3、background-position: 14% 84%;图像的中心点14% 84%。将被放置在父级的14% 84%的位置</div><div class="line">&gt;     总结1：也就是说如果用百分比来作为 background-position的属性值的话,那么背景图片相对于容器的中心点事随时都在改变的。</div><div class="line">&gt;     总计2：background-position: 10% 20%; 背景图片首先会把自身的中心点移动到10% 20%的位置。然后在根据父级元素的宽高来移动(10% 20%)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -468,7 +468,7 @@ background-position详解">
 <li>属性值为像素时，始终以图片的 <strong>左上角</strong> 为基准。</li>
 </ul>
 </blockquote>
-<p><a href="http://linxz.github.io/blog/css%E5%B1%9E%E6%80%A7%E5%9F%BA%E7%A1%80/2015/09/talk-about-background-position-values.html" target="_blank" rel="external">原文传送门</a> </p>
+<p><a href="http://linxz.github.io/blog/css%E5%B1%9E%E6%80%A7%E5%9F%BA%E7%A1%80/2015/09/talk-about-background-position-values.html" target="_blank" rel="external">原文传送门</a></p>
 <h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">1、当前图片宽高为(200*200);</div><div class="line">2、当前元素大小为(100*100);</div><div class="line">图片的原中心点是(0, 0)</div><div class="line">现在的中心点位置是(200*10%, 200*20%),也就是(20px, 40px)。</div><div class="line">按照之前的推理：</div><div class="line">1、图片以(20px,40px)为中心点,移动元素宽度的10%,元素高度的20%,也就是移动了(10px,20px);</div><div class="line">2、最终移动的距离是：(-20px+10px,-40px+20px) === (-10px,-20px);</div><div class="line">*/</div><div class="line">.box&#123;</div><div class="line">  	width: 100px;</div><div class="line">  	height: 100px;</div><div class="line">  	background: url(demo.png) no-repeat;// 当前图片宽高为200*200</div><div class="line">  	background-position: 10% 20%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="公式计算"><a href="#公式计算" class="headerlink" title="公式计算"></a>公式计算</h4><blockquote>
 <p>根据如上的推理,我们若想得到定位的百分比值,</p>
@@ -479,7 +479,7 @@ background-position详解">
 </ul>
 </blockquote>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><a href="http://www.jianshu.com/p/d3b19968a4c2" target="_blank" rel="external">传送门</a></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//$spriteWidth 雪碧图的宽度px</div><div class="line">//$spriteHeight 雪碧图的高度px</div><div class="line">//$iconWidth 需要显示icon的宽度px</div><div class="line">//$iconHeight 需要显示icon的高度px</div><div class="line">//$iconX icon的原始x坐标</div><div class="line">//$iconY icon的原始y坐标</div><div class="line">//</div><div class="line">@mixin bgPosition($spriteWidth, $spriteHeight, $iconWidth, $iconHeight, $iconX, $iconY)&#123;</div><div class="line"></div><div class="line">    background-position: (($iconX / ($spriteWidth - $iconWidth)) * 100% ($iconY / ($spriteHeight - $iconHeight)) * 100%); </div><div class="line">&#125;</div><div class="line"></div><div class="line">.icon2&#123;</div><div class="line">    width: 0.74rem; </div><div class="line">    height: 0.64rem;</div><div class="line">    @include bgPosition(1072, 442, 74, 64, 188, 5); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//$spriteWidth 雪碧图的宽度px</div><div class="line">//$spriteHeight 雪碧图的高度px</div><div class="line">//$iconWidth 需要显示icon的宽度px</div><div class="line">//$iconHeight 需要显示icon的高度px</div><div class="line">//$iconX icon的原始x坐标</div><div class="line">//$iconY icon的原始y坐标</div><div class="line">//</div><div class="line">@mixin bgPosition($spriteWidth, $spriteHeight, $iconWidth, $iconHeight, $iconX, $iconY)&#123;</div><div class="line"></div><div class="line">    background-position: (($iconX / ($spriteWidth - $iconWidth)) * 100% ($iconY / ($spriteHeight - $iconHeight)) * 100%);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.icon2&#123;</div><div class="line">    width: 0.74rem;</div><div class="line">    height: 0.64rem;</div><div class="line">    @include bgPosition(1072, 442, 74, 64, 188, 5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://upload-images.jianshu.io/upload_images/1985420-02914366757db774.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="http://upload-images.jianshu.io/upload_images/1985420-02914366757db774.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 
       
@@ -509,7 +509,7 @@ background-position详解">
       
         <div class="post-tags">
           
-            <a href="/tags/布局/" rel="tag"># 布局</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -622,7 +622,7 @@ background-position详解">
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>

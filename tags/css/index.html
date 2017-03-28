@@ -88,7 +88,7 @@
 <meta name="description" content="无他,唯手熟耳">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ntscshen">
-<meta property="og:url" content="http://ntscshen.com/tags/CSS/index.html">
+<meta property="og:url" content="http://ntscshen.com/tags/css/index.html">
 <meta property="og:site_name" content="ntscshen">
 <meta property="og:description" content="无他,唯手熟耳">
 <meta name="twitter:card" content="summary">
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://ntscshen.com/tags/CSS/"/>
+  <link rel="canonical" href="http://ntscshen.com/tags/css/"/>
 
 
 
 
 
-  <title> 标签: CSS | ntscshen </title>
+  <title> 标签: css | ntscshen </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -313,7 +313,7 @@
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
       <h2 >
-        CSS
+        css
         <small>标签</small>
       </h2>
     </div>
@@ -326,9 +326,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/28/快捷设置CSS3动画.html" itemprop="url">
+            <a class="post-title-link" href="/2016/08/30/如何居中div？如何居中一个浮动元素.html" itemprop="url">
               
-                <span itemprop="name">快捷设置CSS3动画</span>
+                <span itemprop="name">css如何居中一个浮动元素</span>
               
             </a>
         
@@ -336,9 +336,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-28T13:52:02+08:00"
-              content="2017-03-28" >
-          03-28
+              datetime="2016-08-30T22:09:01+08:00"
+              content="2016-08-30" >
+          08-30
         </time>
       </div>
 
@@ -405,7 +405,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -588,7 +588,7 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'ntscshen';
-      var disqus_identifier = 'tags/CSS/index.html';
+      var disqus_identifier = 'tags/css/index.html';
 
       var disqus_title = "";
 
@@ -857,7 +857,26 @@
 
 </body>
 </html>
- $visitors.attr('data-flag-title').trim();
+NER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
       var query = new AV.Query(Counter);
 
       query.equalTo("url", url);
