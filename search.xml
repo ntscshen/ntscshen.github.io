@@ -4,6 +4,22 @@
   
     
     <entry>
+      <title><![CDATA[快捷设置CSS3动画]]></title>
+      <url>http://ntscshen.com/2017/03/28/%E5%BF%AB%E6%8D%B7%E8%AE%BE%E7%BD%AECSS3%E5%8A%A8%E7%94%BB.html</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>来历：在开发一个CSS3动画N多的页面时、我们主体在做的是复制、复制、复制。然后修改 <code>运动效果</code> 、 <code>运动延迟时间</code> 、 <code>运动持续时间</code> </p>
+</blockquote>
+<h5 id="原有模式："><a href="#原有模式：" class="headerlink" title="原有模式："></a>原有模式：</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 持续时间 &amp;&amp;  */</span></div><div class="line"><span class="selector-class">.animated</span> &#123;</div><div class="line">    <span class="attribute">-webkit-animation-duration</span>: <span class="number">1s</span>;</div><div class="line">    <span class="attribute">animation-duration</span>: <span class="number">1s</span>;</div><div class="line">    <span class="attribute">-webkit-animation-fill-mode</span>: both;</div><div class="line">    <span class="attribute">animation-fill-mode</span>: both</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 无限的 */</span></div><div class="line"><span class="selector-class">.animated</span><span class="selector-class">.infinite</span> &#123;</div><div class="line">    <span class="attribute">-webkit-animation-iteration-count</span>: infinite;</div><div class="line">    <span class="attribute">animation-iteration-count</span>: infinite</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 从右弹入 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceInRight &#123;</div><div class="line">    0% &#123;</div><div class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateX</span>(2000px);</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translateX</span>(2000px)</div><div class="line">    &#125;</div><div class="line">    60% &#123;</div><div class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</div><div class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateX</span>(-30px);</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-30px)</div><div class="line">    &#125;</div><div class="line">    80% &#123;</div><div class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateX</span>(10px);</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translateX</span>(10px)</div><div class="line">    &#125;</div><div class="line">    100% &#123;</div><div class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateX</span>(0);</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translateX</span>(0)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@<span class="keyword">keyframes</span> bounceInRight &#123;</div><div class="line">    0% &#123;</div><div class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateX</span>(2000px);</div><div class="line">        <span class="attribute">-ms-transform</span>: <span class="built_in">translateX</span>(2000px);</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translateX</span>(2000px)</div><div class="line">    &#125;</div><div class="line">    60% &#123;</div><div class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</div><div class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateX</span>(-30px);</div><div class="line">        <span class="attribute">-ms-transform</span>: <span class="built_in">translateX</span>(-30px);</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-30px)</div><div class="line">    &#125;</div><div class="line">    80% &#123;</div><div class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateX</span>(10px);</div><div class="line">        <span class="attribute">-ms-transform</span>: <span class="built_in">translateX</span>(10px);</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translateX</span>(10px)</div><div class="line">    &#125;</div><div class="line">    100% &#123;</div><div class="line">        <span class="attribute">-webkit-transform</span>: <span class="built_in">translateX</span>(0);</div><div class="line">        <span class="attribute">-ms-transform</span>: <span class="built_in">translateX</span>(0);</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">translateX</span>(0)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.bounceInRight</span> &#123;</div><div class="line">    <span class="attribute">-webkit-animation-name</span>: bounceInRight;</div><div class="line">    <span class="attribute">animation-name</span>: bounceInRight</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"ani bounceInRight animated"</span> <span class="attr">style</span>=<span class="string">"animation-delay:.9s;-webkit-animation-delay:.9s;-webkit-animation-duration: 2s;animation-duration: 2s;"</span>&gt;</span>A.颜值担当<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"ani bounceInRight animated"</span> <span class="attr">style</span>=<span class="string">"animation-delay:1.2s;-webkit-animation-delay:1.2s;-webkit-animation-duration: 2s;animation-duration: 2s;"</span>&gt;</span>B.颜值担当<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"ani bounceInRight animated"</span> <span class="attr">style</span>=<span class="string">"animation-delay:1.5s;-webkit-animation-delay:1.5s;-webkit-animation-duration: 2s;animation-duration: 2s;"</span>&gt;</span>C.颜值担当<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="使用动态修改"><a href="#使用动态修改" class="headerlink" title="使用动态修改"></a>使用动态修改</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"s-an"</span> <span class="attr">effect</span>=<span class="string">"bounceInRight"</span> <span class="attr">delay</span>=<span class="string">".4s"</span> <span class="attr">duration</span>=<span class="string">"1s"</span>&gt;</span>A.颜值担当<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--</span></div><div class="line">effect:效果</div><div class="line">delay:延期</div><div class="line">duration:持续</div><div class="line"> --&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * [setAnimate 设置CSS3动画(便捷)]</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setAnimate</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> oAni = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.s-an'</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oAni.length; i++) &#123;</div><div class="line">        <span class="keyword">var</span> effect = oAni[i].getAttribute(<span class="string">'effect'</span>)</div><div class="line">            ? oAni[i].getAttribute(<span class="string">'effect'</span>)</div><div class="line">            : <span class="string">''</span>;</div><div class="line">        <span class="keyword">var</span> duration = oAni[i].getAttribute(<span class="string">'duration'</span>)</div><div class="line">            ? oAni[i].getAttribute(<span class="string">'duration'</span>)</div><div class="line">            : <span class="string">''</span>;</div><div class="line">        <span class="keyword">var</span> delay = oAni[i].getAttribute(<span class="string">'delay'</span>)</div><div class="line">            ? oAni[i].getAttribute(<span class="string">'delay'</span>)</div><div class="line">            : <span class="string">''</span>;</div><div class="line">        <span class="comment">// 获取style信息</span></div><div class="line">        <span class="keyword">var</span> style = oAni[i].getAttribute(<span class="string">'style'</span>)</div><div class="line">            ? oAni[i].getAttribute(<span class="string">'style'</span>)</div><div class="line">            : <span class="string">''</span>;</div><div class="line">        <span class="comment">// 设置CSS3动态特效名称</span></div><div class="line">        oAni[i].className = oAni[i].className + <span class="string">' '</span> + effect + <span class="string">' '</span> + <span class="string">'animated'</span>;</div><div class="line">        <span class="comment">// 设置持续时间</span></div><div class="line">        duration &amp;&amp; (style = style + <span class="string">'animation-duration:'</span> + duration + <span class="string">';-webkit-animation-duration:'</span> + duration + <span class="string">';'</span>)</div><div class="line">        <span class="comment">// 设置延迟时间</span></div><div class="line">        delay &amp;&amp; (style = style + <span class="string">'animation-delay:'</span> + delay + <span class="string">';-webkit-animation-delay'</span> + delay + <span class="string">';'</span>);</div><div class="line">        <span class="comment">// 设置style</span></div><div class="line">        oAni[i].setAttribute(<span class="string">'style'</span>, style);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">setAnimate();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>留下您的脚步~</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[webpack初涉]]></title>
       <url>http://ntscshen.com/2017/03/09/webpack%E5%88%9D%E6%B6%89.html</url>
       <content type="html"><![CDATA[<blockquote>
@@ -1381,6 +1397,38 @@
     </entry>
     
     <entry>
+      <title><![CDATA[gitflow Workflow工作流]]></title>
+      <url>http://ntscshen.com/2016/08/18/Workflow%E5%B7%A5%E4%BD%9C%E6%B5%81.html</url>
+      <content type="html"><![CDATA[<h3 id="分支类型和流程"><a href="#分支类型和流程" class="headerlink" title="分支类型和流程"></a>分支类型和流程</h3><p><img src="http://nvie.com/img/git-model@2x.png" alt="http://nvie.com/img/git-model@2x.png"></p>
+<h5 id="Commit-message的格式"><a href="#Commit-message的格式" class="headerlink" title="Commit message的格式"></a>Commit message的格式</h5><blockquote>
+<p>每次提交,Commit message 都包括三个部分：Header( 必须 )、Body( 可省略 )、Footer( 可省略 )</p>
+</blockquote>
+<h6 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h6><blockquote>
+<p>Header部分只有一行,包含三个字段</p>
+<ul>
+<li>type( 必须 )：类型<ul>
+<li>feat：新功能( <code>feature</code> )</li>
+<li>fix：修补Bug</li>
+<li>docs：文档( <code>documentation</code> )</li>
+<li>style：格式( 不影响代码运行的变动 )</li>
+<li>refactor：重构( 即不新增功能、也不是修改Bug的代码变动 )</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动</li>
+</ul>
+</li>
+<li>scope( 可选 )：范围( commit影响的范围，如数据层、控制层、视图层等 )</li>
+<li>subject( 必须 )：主题( commit目的的简短描述,不超过50个字符 )<ul>
+<li>第一个字母小写</li>
+<li>结尾不加句号(.)</li>
+<li>以动词开头、使用第一人称现在时</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[SSH Key到Github]]></title>
       <url>http://ntscshen.com/2016/08/18/%E6%B7%BB%E5%8A%A0SSH%20Key%E5%88%B0Github.html</url>
       <content type="html"><![CDATA[<h2 id="添加ssh-key到Github"><a href="#添加ssh-key到Github" class="headerlink" title="添加ssh key到Github"></a>添加ssh key到Github</h2><h3 id="什么是SSH"><a href="#什么是SSH" class="headerlink" title="什么是SSH?"></a>什么是SSH?</h3><blockquote>
@@ -1428,38 +1476,6 @@
 <p>注意此处不要一路回车,否则邮箱将覆盖上一次生成的ssh key,要给这个文件起个名字,例如 <code>id_rsa_GitLab</code> ,默认的是 <code>id_rsa</code> </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 在.ssh目录下的 添加gitLab配置项</div><div class="line"># gitLab</div><div class="line">Host xxx.xxx.cn</div><div class="line">User xxx@xxx.com</div><div class="line">Hostname xxx.xxx.cn</div><div class="line">PreferredAuthentications publickey</div><div class="line">IdentityFile ~/.ssh/id_rsa_GitLab</div></pre></td></tr></table></figure>
 <h5 id="测试是否连通"><a href="#测试是否连通" class="headerlink" title="测试是否连通"></a>测试是否连通</h5><p><img src="http://occeqxmsk.bkt.clouddn.com/082005.jpg" alt="http://occeqxmsk.bkt.clouddn.com/082005.jpg"></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[gitflow Workflow工作流]]></title>
-      <url>http://ntscshen.com/2016/08/18/Workflow%E5%B7%A5%E4%BD%9C%E6%B5%81.html</url>
-      <content type="html"><![CDATA[<h3 id="分支类型和流程"><a href="#分支类型和流程" class="headerlink" title="分支类型和流程"></a>分支类型和流程</h3><p><img src="http://nvie.com/img/git-model@2x.png" alt="http://nvie.com/img/git-model@2x.png"></p>
-<h5 id="Commit-message的格式"><a href="#Commit-message的格式" class="headerlink" title="Commit message的格式"></a>Commit message的格式</h5><blockquote>
-<p>每次提交,Commit message 都包括三个部分：Header( 必须 )、Body( 可省略 )、Footer( 可省略 )</p>
-</blockquote>
-<h6 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h6><blockquote>
-<p>Header部分只有一行,包含三个字段</p>
-<ul>
-<li>type( 必须 )：类型<ul>
-<li>feat：新功能( <code>feature</code> )</li>
-<li>fix：修补Bug</li>
-<li>docs：文档( <code>documentation</code> )</li>
-<li>style：格式( 不影响代码运行的变动 )</li>
-<li>refactor：重构( 即不新增功能、也不是修改Bug的代码变动 )</li>
-<li>test：增加测试</li>
-<li>chore：构建过程或辅助工具的变动</li>
-</ul>
-</li>
-<li>scope( 可选 )：范围( commit影响的范围，如数据层、控制层、视图层等 )</li>
-<li>subject( 必须 )：主题( commit目的的简短描述,不超过50个字符 )<ul>
-<li>第一个字母小写</li>
-<li>结尾不加句号(.)</li>
-<li>以动词开头、使用第一人称现在时</li>
-</ul>
-</li>
-</ul>
-</blockquote>
 ]]></content>
     </entry>
     
