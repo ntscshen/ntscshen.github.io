@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title><![CDATA[jsonp]]></title>
+      <url>%2F2017%2F04%2F14%2Fjsonp.html</url>
+      <content type="text"><![CDATA[很简单，就是利用标签没有跨域限制的“漏洞”（历史遗迹啊）来达到与第三方通讯的目的。当需要通讯时，本站脚本创建一个元素，地址指向第三方的API网址，形如： 并提供一个回调函数来接收数据（函数名可约定，或通过地址参数传递）。 第三方产生的响应为json数据的包装（故称之为jsonp，即json padding），形如： callback({“name”:”hax”,”gender”:”Male”}) 这样浏览器会调用callback函数，并传递解析后json对象作为参数。本站脚本可在callback函数里处理所传入的数据。 补充：“历史遗迹”的意思就是，如果在今天重新设计的话，也许就不会允许这样简单的跨域了嘿，比如可能像XHR一样按照CORS规范要求服务器发送特定的http头。 https://www.zhihu.com/question/19966531]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[小米5下line-height问题]]></title>
+      <url>%2F2017%2F04%2F13%2F%E5%B0%8F%E7%B1%B35%E4%B8%8Bline-height%E9%97%AE%E9%A2%98.html</url>
+      <content type="text"><![CDATA[在小米5(Android)上总是发现文字偏上 原因：line-height对一部分Android手机不起作用,有自己的默认行高,默认行高为22px( 有待考证 ) 解决办法123line-height: 0;padding: 10px 0; /* 高度修改为对应的padding值 */font-size: 12px; /* 此处需为px、不可使用rem */]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Vue实际案例]]></title>
+      <url>%2F2017%2F04%2F13%2FVue%E5%AE%9E%E9%99%85%E6%A1%88%E4%BE%8B.html</url>
+      <content type="text"><![CDATA[]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[快捷设置CSS3动画]]></title>
       <url>%2F2017%2F03%2F28%2F%E5%BF%AB%E6%8D%B7%E8%AE%BE%E7%BD%AECSS3%E5%8A%A8%E7%94%BB.html</url>
       <content type="text"><![CDATA[来历：在开发一个CSS3动画N多的页面时、我们主体在做的是复制、复制、复制。然后修改 运动效果 、 运动延迟时间 、 运动持续时间 。 原有模式：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263/* 持续时间 &amp;&amp; */.animated &#123; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both&#125;/* 无限的 */.animated.infinite &#123; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite&#125;/* 从右弹入 */@-webkit-keyframes bounceInRight &#123; 0% &#123; opacity: 0; -webkit-transform: translateX(2000px); transform: translateX(2000px) &#125; 60% &#123; opacity: 1; -webkit-transform: translateX(-30px); transform: translateX(-30px) &#125; 80% &#123; -webkit-transform: translateX(10px); transform: translateX(10px) &#125; 100% &#123; -webkit-transform: translateX(0); transform: translateX(0) &#125;&#125;@keyframes bounceInRight &#123; 0% &#123; opacity: 0; -webkit-transform: translateX(2000px); -ms-transform: translateX(2000px); transform: translateX(2000px) &#125; 60% &#123; opacity: 1; -webkit-transform: translateX(-30px); -ms-transform: translateX(-30px); transform: translateX(-30px) &#125; 80% &#123; -webkit-transform: translateX(10px); -ms-transform: translateX(10px); transform: translateX(10px) &#125; 100% &#123; -webkit-transform: translateX(0); -ms-transform: translateX(0); transform: translateX(0) &#125;&#125;.bounceInRight &#123; -webkit-animation-name: bounceInRight; animation-name: bounceInRight&#125; 123&lt;li class="ani bounceInRight animated" style="animation-delay:.9s;-webkit-animation-delay:.9s;-webkit-animation-duration: 2s;animation-duration: 2s;"&gt;A.颜值担当&lt;/li&gt;&lt;li class="ani bounceInRight animated" style="animation-delay:1.2s;-webkit-animation-delay:1.2s;-webkit-animation-duration: 2s;animation-duration: 2s;"&gt;B.颜值担当&lt;/li&gt;&lt;li class="ani bounceInRight animated" style="animation-delay:1.5s;-webkit-animation-delay:1.5s;-webkit-animation-duration: 2s;animation-duration: 2s;"&gt;C.颜值担当&lt;/li&gt; 使用动态修改123456&lt;li class="s-an" effect="bounceInRight" delay=".4s" duration="1s"&gt;A.颜值担当&lt;/li&gt;&lt;!--effect:效果delay:延期duration:持续 --&gt; 12345678910111213141516171819202122232425262728293031/** * [setAnimate 设置CSS3动画(便捷)] */function setAnimate() &#123; var oAni = document.querySelectorAll('.s-an'); for (var i = 0; i &lt; oAni.length; i++) &#123; var effect = oAni[i].getAttribute('effect') ? oAni[i].getAttribute('effect') : ''; var duration = oAni[i].getAttribute('duration') ? oAni[i].getAttribute('duration') : ''; var delay = oAni[i].getAttribute('delay') ? oAni[i].getAttribute('delay') : ''; // 获取style信息 var style = oAni[i].getAttribute('style') ? oAni[i].getAttribute('style') : ''; // 设置CSS3动态特效名称 oAni[i].className = oAni[i].className + ' ' + effect + ' ' + 'animated'; // 设置持续时间 duration &amp;&amp; (style = style + 'animation-duration:' + duration + ';-webkit-animation-duration:' + duration + ';') // 设置延迟时间 delay &amp;&amp; (style = style + 'animation-delay:' + delay + ';-webkit-animation-delay' + delay + ';'); // 设置style oAni[i].setAttribute('style', style); &#125;&#125;setAnimate(); 留下您的脚步~]]></content>
@@ -221,7 +242,7 @@
     
     <entry>
       <title><![CDATA[css如何居中一个浮动元素]]></title>
-      <url>%2F2016%2F08%2F30%2F%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%ADdiv%EF%BC%9F%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0.html</url>
+      <url>%2F2016%2F08%2F30%2Fcss%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0.html</url>
       <content type="text"><![CDATA[如何利用CSS居中一个浮动元素 居中一个浮动元素 宽度是必须的 使用相对定位 使用margin 1234567891011div&#123; position: relative;//相对于父级 left: 50%; top: 50%; float: left; margin-left: -100px; margin-top: -100px; width: 200px; height: 200px; background-color: red;&#125; 如何居中divcss中可以被继承的属性font-size、font-family、font-size、font-weight、color、text-indent、line-height、text-align、letter-spacing、word-spacing 文本相关属性 font-size、font-style、font-family、font-weight、font、 line-height、text-align、 text-indent首行文本缩进、letter-spacing单个字母间距、word-spacing以空白为分割间距 列表相关属性(li) list-style-type: decimal数字、circle空心圆、默认实心圆 list-style-position:inside放在文本以内且环绕文本 outside默认 list-style-image:使用图像来替换列表项的标记 缩写形式:list-style: decimal outside url(&#39;img/arror.gif&#39;); 颜色color 若被问到类似的问题 字体系列font-size\font-family\font-style\font-weight 字体颜色color 字体间距letter-spacing\word-spacing 列表系列list-style-image\type\position line-height\text-align\text-indent css中的选择器 常规选择器：ID\class\元素\ *通配符 伪类选择器： 动态伪类选择器:link\:visited\:active\:hover\:focus 状态伪类选择器 E:disabled{}匹配所有被禁言的表单元素 E:checked{}匹配表单中被选中的单选或复选按钮 E:enabled{}匹配被启用的元素(表单元素)checked反面 结构伪类 E:first-child选取特定元素的第一个子元素 OR last-child E:first-of-type(){} 和first-child一样、只是指定了元素类型 E:nth-child(n)选取特定元素的一个或多个子元素、n虫1开始、也可以是odd(奇数)，even(偶数)。E:nth-last-child(n) E:nth-of-type(n){}计算父元素中指定的某种类型的子元素 E:root匹配E所在文档的跟元素 E::first-line匹配元素的第一行文本、常用于文本排版 E::after E::before ::selection选中的文本背景颜色 关系选择器： A &gt; E 直系后代(children)子代选择器 A E 后代元素(find)后代选择器 E + F 同辈元素且在E后面的元素(next)相邻兄弟元素选择器 样式的优先级算法 - 优先级 内联 ID选择器 伪类选择器e.g: E:first-child{} 属性选择器e.g: input[type=&quot;text&quot;]{} 类选择器 元素选择器 通配符 !important除外]]></content>
     </entry>
 
