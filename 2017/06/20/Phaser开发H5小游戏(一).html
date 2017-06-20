@@ -92,8 +92,8 @@ npm install http-server -g 可以使用它来配置简单的http服务
 browser-sync 或 browser-sync-webpack-plugin 或 devServer
 
 下载Phaser.js官网github下载
-个人线上地址 
-再次 需要下载教程内的资源制作第一个">
+个人线上地址
+再次 需要下载教程内的资源制作第一个小">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Phaser开发H5小游戏(一)">
 <meta property="og:url" content="http://ntscshen.com/2017/06/20/Phaser开发H5小游戏(一).html">
@@ -105,10 +105,10 @@ npm install http-server -g 可以使用它来配置简单的http服务
 browser-sync 或 browser-sync-webpack-plugin 或 devServer
 
 下载Phaser.js官网github下载
-个人线上地址 
-再次 需要下载教程内的资源制作第一个">
+个人线上地址
+再次 需要下载教程内的资源制作第一个小">
 <meta property="og:image" content="https://phaser.io/content/tutorials/making-your-first-phaser-game/dude.png">
-<meta property="og:updated_time" content="2017-06-20T08:18:22.000Z">
+<meta property="og:updated_time" content="2017-06-20T08:49:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Phaser开发H5小游戏(一)">
 <meta name="twitter:description" content="刚刚学习Phaser、在博客上记载一下学习过程。先从官方的小例子开始😁
@@ -118,8 +118,8 @@ npm install http-server -g 可以使用它来配置简单的http服务
 browser-sync 或 browser-sync-webpack-plugin 或 devServer
 
 下载Phaser.js官网github下载
-个人线上地址 
-再次 需要下载教程内的资源制作第一个">
+个人线上地址
+再次 需要下载教程内的资源制作第一个小">
 <meta name="twitter:image" content="https://phaser.io/content/tutorials/making-your-first-phaser-game/dude.png">
 
 
@@ -462,7 +462,7 @@ browser-sync 或 browser-sync-webpack-plugin 或 devServer
 <li><code>browser-sync</code> 或 <code>browser-sync-webpack-plugin</code> 或 <code>devServer</code></li>
 </ol>
 <h5 id="下载Phaser-js"><a href="#下载Phaser-js" class="headerlink" title="下载Phaser.js"></a>下载Phaser.js</h5><p><a href="https://github.com/photonstorm/phaser-ce/tree/v2.8.0/build" target="_blank" rel="external">官网github下载</a></p>
-<p><a href="http://occeqxmsk.bkt.clouddn.com/phaser.min.js" target="_blank" rel="external">个人线上地址</a> </p>
+<p><a href="http://occeqxmsk.bkt.clouddn.com/phaser.min.js" target="_blank" rel="external">个人线上地址</a></p>
 <h5 id="再次-需要下载教程内的资源"><a href="#再次-需要下载教程内的资源" class="headerlink" title="再次 需要下载教程内的资源"></a>再次 <a href="https://github.com/photonstorm/phaser/raw/master/v2/resources/tutorials/02%20Making%20your%20first%20game/phaser_tutorial_02.zip" target="_blank" rel="external">需要下载教程内的资源</a></h5><h4 id="制作第一个小游戏-part1"><a href="#制作第一个小游戏-part1" class="headerlink" title="制作第一个小游戏(part1)"></a>制作第一个小游戏(part1)</h4><ul>
 <li>创建游戏实例</li>
 </ul>
@@ -473,7 +473,7 @@ browser-sync 或 browser-sync-webpack-plugin 或 devServer
 <p>准备游戏人物</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">player = game.add.sprite(<span class="number">32</span>, game.world.height - <span class="number">150</span>, <span class="string">'dude'</span>);</div><div class="line">game.physics.arcade.enable(player);</div><div class="line"><span class="comment">// 为精灵启动物理引擎、在组中启动物理引擎是 platforms.enableBody = true;</span></div><div class="line">player.body.bounce.y = <span class="number">0.2</span>;<span class="comment">// bounce:弹跳。給玩家轻微反弹</span></div><div class="line">player.body.gravity.y = <span class="number">300</span>;<span class="comment">// gravity:重力。这个值越高、物体感觉越重、下降越快</span></div><div class="line">player.body.collideWorldBounds = <span class="literal">true</span>;<span class="comment">// 超出世界的界限、将会碰撞回来</span></div><div class="line"><span class="comment">// Phaser独有的序列帧动画</span></div><div class="line">player.animations.add(<span class="string">'left'</span>, [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">10</span>, <span class="literal">true</span>);</div><div class="line">player.animations.add(<span class="string">'right'</span>, [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>], <span class="number">10</span>, <span class="literal">true</span>);</div></pre></td></tr></table></figure>
-<p><img src="https://phaser.io/content/tutorials/making-your-first-phaser-game/dude.png" alt="https://phaser.io/content/tutorials/making-your-first-phaser-game/dude.png"> </p>
+<p><img src="https://phaser.io/content/tutorials/making-your-first-phaser-game/dude.png" alt="https://phaser.io/content/tutorials/making-your-first-phaser-game/dude.png"></p>
 <p>总共有9帧。面相用户的是第4个，左边4个、右边4个。定义了两个动画’left’、’right’ true参数告诉Phaser动画是循环播放的。’10’ 为毫秒的时间。10毫秒执行一次动画帧</p>
 <h4 id="制作第一个小游戏-part5"><a href="#制作第一个小游戏-part5" class="headerlink" title="制作第一个小游戏(part5)"></a>制作第一个小游戏(part5)</h4><blockquote>
 <p>打开part5.html (请开启服务)</p>
@@ -486,7 +486,7 @@ browser-sync 或 browser-sync-webpack-plugin 或 devServer
 <h4 id="制作第一个小游戏-part6"><a href="#制作第一个小游戏-part6" class="headerlink" title="制作第一个小游戏(part6)"></a>制作第一个小游戏(part6)</h4><blockquote>
 <p>用键盘控制游戏人物</p>
 <p>玩家需要根据键盘的方向去移动。 Phaser有一个内置的键盘管理器</p>
-<p><code>cursors = game.input.keyboard.createCursorKeys();</code> </p>
+<p><code>cursors = game.input.keyboard.createCursorKeys();</code></p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  	...</div><div class="line">    cursors = game.input.keyborad.createCursorKeys();</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">update</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  	<span class="comment">// 玩家和平台碰撞</span></div><div class="line">  	game.physics.arcade.collide(player, platforms);</div><div class="line">  	<span class="comment">// 重置玩家 - 速度(velocity)</span></div><div class="line">  	player.body.velocity.x = <span class="number">0</span>;</div><div class="line">  	<span class="keyword">if</span>(cursors.left.isDown)&#123;<span class="comment">// 键盘左</span></div><div class="line">      	player.body.velocity.x = <span class="number">-150</span>;</div><div class="line">      	player.animations.play(<span class="string">'left'</span>);<span class="comment">// 序列帧动画执行left</span></div><div class="line">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(cursors.right.isDown)&#123;</div><div class="line">      	player.body.velocity.x = <span class="number">150</span>;</div><div class="line">      	player.animations.play(<span class="string">'right'</span>);</div><div class="line">  	&#125;<span class="keyword">else</span>&#123;<span class="comment">// 左右键不触发 - 则停止序列帧动画 - 显示第四帧</span></div><div class="line">      	player.animations.stop();</div><div class="line">      	player.frame = <span class="number">4</span>;</div><div class="line">  	&#125;</div><div class="line">  	<span class="keyword">if</span>(cursors.up.isDown &amp;&amp; player.body.touching.down)&#123;<span class="comment">// 玩家接触地面</span></div><div class="line">      	player.body.velocity.y = <span class="number">-200</span>;</div><div class="line">  	&#125;</div><div class="line">  	<span class="comment">// player.body.touching.down 如果不设置这段、则游戏会出现Bug。玩家在半空中跳跃</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="制作第一个小游戏-part7"><a href="#制作第一个小游戏-part7" class="headerlink" title="制作第一个小游戏(part7)"></a>制作第一个小游戏(part7)</h4><blockquote>
@@ -523,7 +523,7 @@ browser-sync 或 browser-sync-webpack-plugin 或 devServer
 <h5 id="game-add-group-组的概念"><a href="#game-add-group-组的概念" class="headerlink" title="game.add.group()组的概念"></a>game.add.group()组的概念</h5><ul>
 <li>将类似的对象组合在一起、并将其全部控制为一个单独的单元体。</li>
 <li>组和组可以进行碰撞、组合精灵可碰撞。但是组合图片无法碰撞</li>
-<li>在组中创建元素 <code>stars = game.add.group(); stars.create(0, 0, &#39;star&#39;);</code> </li>
+<li>在组中创建元素 <code>stars = game.add.group(); stars.create(0, 0, &#39;star&#39;);</code></li>
 <li><code>stars.enableBody = true</code> 为组中创建的任何对象 - 启动物理引擎</li>
 <li><code>image</code> 无法实现逐帧动画、无法添加物理属性</li>
 </ul>
@@ -540,8 +540,8 @@ browser-sync 或 browser-sync-webpack-plugin 或 devServer
 <p>一个正常的序列帧动画、一套动作、执行时间的长短、是否循环。本质的动作下来是一套gif动画的话、可以像上面怎么写↑↑</p>
 <p>如果类似于Phaser官网的第一个小游戏那样话( 在特定的条件下、执行这段动画的特定区域 )</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> player;</div><div class="line"><span class="comment">// 1、资源加载 - preload</span></div><div class="line">game.load.spritesheet(<span class="string">'dude'</span>,<span class="string">'xxx.png'</span>,<span class="number">32</span>,<span class="number">32</span>);</div><div class="line"><span class="comment">// 2、创建元素 - create</span></div><div class="line">player = game.add.sprite(<span class="number">32</span>, game.width.height, <span class="string">'dude'</span>);</div><div class="line">player.animations.add(<span class="string">'left'</span>,[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="number">20</span>,<span class="literal">true</span>);</div><div class="line">player.animations.add(<span class="string">'right'</span>,[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],<span class="number">20</span>,<span class="literal">true</span>);</div><div class="line"><span class="comment">// 3、更新 - update</span></div><div class="line"><span class="keyword">if</span>(xxx)&#123;</div><div class="line">  	player.animations.play(<span class="string">'left'</span>);</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">  	player.animations.play(<span class="string">'right'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="https://segmentfault.com/a/1190000009212221" target="_blank" rel="external">Phaser中文教程传送门</a> </p>
-<p>脑壳痛：现在是<em>知其然</em> 而不 <em>知其所以然</em> </p>
+<p><a href="https://segmentfault.com/a/1190000009212221" target="_blank" rel="external">Phaser中文教程传送门</a></p>
+<p>脑壳痛：现在是<em>知其然</em> 而不 <em>知其所以然</em></p>
 <p>哎、期望不辜负这大好时光啊~</p>
 
       
@@ -580,8 +580,8 @@ browser-sync 或 browser-sync-webpack-plugin 或 devServer
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/01/使用Phaser-js开发小游戏.html" rel="next" title="使用Phaser.js开发小游戏">
-                <i class="fa fa-chevron-left"></i> 使用Phaser.js开发小游戏
+              <a href="/2017/06/01/使用Phaser-js开发小游戏.html" rel="next" title="Phaser开发H5小游戏">
+                <i class="fa fa-chevron-left"></i> Phaser开发H5小游戏
               </a>
             
           </div>
