@@ -322,7 +322,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2016/08/18/Workflow工作流.html">
+  <link itemprop="mainEntityOfPage" href="http://ntscshen.com/2016/08/18/添加SSH Key到Github.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ntscshen">
@@ -347,8 +347,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/18/Workflow工作流.html" itemprop="url">
-                  gitflow Workflow工作流
+                <a class="post-title-link" href="/2016/08/18/添加SSH Key到Github.html" itemprop="url">
+                  SSH Key到Github
                 </a>
               
             
@@ -396,8 +396,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/08/18/Workflow工作流.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/18/Workflow工作流.html" itemprop="commentCount"></span>
+                <a href="/2016/08/18/添加SSH Key到Github.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/18/添加SSH Key到Github.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,7 +407,7 @@
 
           
           
-             <span id="/2016/08/18/Workflow工作流.html" class="leancloud_visitors" data-flag-title="gitflow Workflow工作流">
+             <span id="/2016/08/18/添加SSH Key到Github.html" class="leancloud_visitors" data-flag-title="SSH Key到Github">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,28 +434,22 @@
       
         
           
-          分支类型和流程
-Commit message的格式
-每次提交,Commit message 都包括三个部分：Header( 必须 )、Body( 可省略 )、Footer( 可省略 )
+          添加ssh key到Github什么是SSH?
+简单说，SSH是一种网络协议，用于计算机之间的加密登录。
+如果一个用户从本地计算机，使用SSH协议登录另一台远程计算机，我们就可以认为，这种登录是安全的，即使被中途截获，密码也不会泄露。
 
-Header
-Header部分只有一行,包含三个字段
+首先先确认是否已经存在公钥了( SSH Keys )
+1ls -al ~/.ssh
 
-type( 必须 )：类型
-feat：新功能( feature )
-fix：修补Bug
-docs：文档( documentation )
-style：格式( 不影响代码运行的变动 )
-refactor：重构( 即不新增功能、也不是修改Bug的代码变动 )
-test：增加测试
-chore：构建过程或辅助工具的变动
+若存在id_rsa或id_rsa.pub。则代表已经生成过Key值、直接将SSH key添加到Github中
 
-
-scope( 可选 )：范围( commit影响的范围，如数据层、控制层、视图
+生成SSH 公钥1ssh-keygen -t rsa -C "注释内容，一般为邮件地址 xxx@163.com"
+接着会显示以下的输出
+123456789101112131415161718192021G
           ...
           <!--noindex-->
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/18/Workflow工作流.html#more" rel="contents">
+            <a class="btn" href="/2016/08/18/添加SSH Key到Github.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -626,7 +620,7 @@ scope( 可选 )：范围( commit影响的范围，如数据层、控制层、视
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
