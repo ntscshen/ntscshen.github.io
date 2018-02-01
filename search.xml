@@ -4,6 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[阮老师的未来世界的幸存者读后记]]></title>
+      <url>http://ntscshen.com/2018/02/01/%E9%98%AE%E8%80%81%E5%B8%88%E7%9A%84%E6%9C%AA%E6%9D%A5%E4%B8%96%E7%95%8C%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85%E8%AF%BB%E5%90%8E%E8%AE%B0.html</url>
+      <content type="html"><![CDATA[<h3 id="现实"><a href="#现实" class="headerlink" title="现实"></a>现实</h3><blockquote>
+<p>经济增长将持续放缓,几乎所有行业都不会有以前那么高的增长率,<strong>除了高科技行业</strong><br>长期来看,一定是技术主导,中短期是权利和经济导向<br>大学的知识如果只学最需要学习的,1年足以学完,大学四年足以让一个人成为任何领域的资深从业者<br>大学的本意是为那些走学术生涯的人开设的,中学毕业后就应该学选择走”学术”还是”职业”道路,边工作,边学习。 - 学习应该是启发,理解,的方式进行。 - 按需学习 | 按兴趣学习 | 按成长历程的感悟学习</p>
+<h3 id="职业"><a href="#职业" class="headerlink" title="职业"></a>职业</h3><p>如果岗位没有你,是否有重大损失？<br>如果一个新人接手你的岗位,他/她能不能再几个月内快速上手,而它们要求的报酬又是多少?<br>45一个不是那么有用的年纪,每1年就应该更新和夯实自己的知识体系( 清理过时的体系,加入当下需要的,未来需要的 )<br>B计划(备用方案、应急预案、风险控制)：如果人生可以重新开始,你会选择什么样的工作?B计划当成逃离A计划的一个机会,追求梦想中期待的工作。这样,才有最大的动力。</p>
+</blockquote>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><blockquote>
+<p>做 IT 产业非常寂寞<br>学技术要掌握本质：本质,不变性,可复用。底层的,本质的东西搞明白,会給我们带来”<strong>莫大的帮助</strong>“,<br>本质性、结构性的东西属于基础建设方面的问题，它对我们做项目可能不会带来直接的帮助，但在无形中会带来很大的影响，无形的通常是最宝贵的！<br>“撑一下海阔天空”，一试再试做不成，再试一下，再试一下。<br>单单实现一个产品是不够的，你还必须参与决定怎么实现。好的工程师并不仅仅服从命令，而且还给出反馈，帮助产品的拥有者改进它。<br>当成自己的事情</p>
+</blockquote>
+<h3 id="未来尤可知"><a href="#未来尤可知" class="headerlink" title="未来尤可知"></a>未来尤可知</h3><p>顺应历史潮流，基因、技术、混乱,在快速的迭代跟新中,万变中求不变。<br>历史经验告诉我们，技术进步给社会带来新问题的速度，远比它解决旧问题的速度要快。</p>
+<blockquote>
+<p>达则兼济天下 穷则独善其身</p>
+</blockquote>
+<p><strong>终身学习,不要懈怠</strong></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[什么是？事件轮询和异步I/O]]></title>
       <url>http://ntscshen.com/2018/02/01/%E4%BB%80%E4%B9%88%E6%98%AF%EF%BC%9F%E4%BA%8B%E4%BB%B6%E8%BD%AE%E8%AF%A2%E5%92%8C%E5%BC%82%E6%AD%A5I-O.html</url>
       <content type="html"><![CDATA[<p>什么是？事件轮询和异步I/O</p>
@@ -1864,22 +1882,6 @@
     
     <entry>
       <title><![CDATA[css如何居中一个浮动元素]]></title>
-      <url>http://ntscshen.com/2016/08/30/%E6%AF%8F%E6%97%A5ES6%20-%20let%E5%92%8Cvar%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
-      <content type="html"><![CDATA[<h2 id="let和var的区别"><a href="#let和var的区别" class="headerlink" title="let和var的区别"></a><strong>let和var的区别</strong></h2><ul>
-<li>块级作用域：用let定义的变量只在定义它的块中有效</li>
-<li>不会变量提升、为声明前使用、直接报错。</li>
-<li>let会暂时性死区、一但快内let声明了a、全局变量a将不会起作用</li>
-<li>let不允许在相同作用域内、重复声明同一个变量<blockquote>
-<p>为什么引进块级作用域？<br>for循环的i变量控制循环、防止泄露<br>在ES6之前 - JS没有块级作用域</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// function要注意的规范</span></div><div class="line"><span class="comment">// 应该避免在块级作用域内声明函数、如果确实需要、也应该写成函数表达式、而不是函数式声明</span></div><div class="line"><span class="comment">// 函数式声明</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="string">"shen"</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 函数表达式</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="string">"yang"</span>;</div><div class="line">  <span class="keyword">let</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[css如何居中一个浮动元素]]></title>
       <url>http://ntscshen.com/2016/08/30/css%E5%A6%82%E4%BD%95%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0.html</url>
       <content type="html"><![CDATA[<h2 id="如何利用CSS居中一个浮动元素"><a href="#如何利用CSS居中一个浮动元素" class="headerlink" title="如何利用CSS居中一个浮动元素"></a>如何利用CSS居中一个浮动元素</h2><blockquote>
 <ul>
@@ -1958,6 +1960,22 @@
     </entry>
     
     <entry>
+      <title><![CDATA[css如何居中一个浮动元素]]></title>
+      <url>http://ntscshen.com/2016/08/30/%E6%AF%8F%E6%97%A5ES6%20-%20let%E5%92%8Cvar%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
+      <content type="html"><![CDATA[<h2 id="let和var的区别"><a href="#let和var的区别" class="headerlink" title="let和var的区别"></a><strong>let和var的区别</strong></h2><ul>
+<li>块级作用域：用let定义的变量只在定义它的块中有效</li>
+<li>不会变量提升、为声明前使用、直接报错。</li>
+<li>let会暂时性死区、一但快内let声明了a、全局变量a将不会起作用</li>
+<li>let不允许在相同作用域内、重复声明同一个变量<blockquote>
+<p>为什么引进块级作用域？<br>for循环的i变量控制循环、防止泄露<br>在ES6之前 - JS没有块级作用域</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// function要注意的规范</span></div><div class="line"><span class="comment">// 应该避免在块级作用域内声明函数、如果确实需要、也应该写成函数表达式、而不是函数式声明</span></div><div class="line"><span class="comment">// 函数式声明</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="string">"shen"</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 函数表达式</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="string">"yang"</span>;</div><div class="line">  <span class="keyword">let</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[抓包工具]]></title>
       <url>http://ntscshen.com/2016/08/22/%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7.html</url>
       <content type="html"><![CDATA[<h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><p><a href="http://www.imooc.com/view/37" target="_blank" rel="external">Win上的抓包 - Fiddler工具使用</a> </p>
@@ -1978,6 +1996,38 @@
 <p>然后打开手机浏览器，输入 <a href="http://www.charlesproxy.com/getssl/进行mac电脑charles" target="_blank" rel="external">http://www.charlesproxy.com/getssl/进行mac电脑charles</a> ssl 根证书安装</p>
 <p><img src="https://gitsea.com/wp-content/uploads/2015/11/51BB8CA2FEEC517BB75CEBCFA2B171C7-337x600.png" alt="手机证书安装"></p>
 <p>安装成功之后不管是手机内部app还是浏览器浏览https 站点，都可以进行抓包</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[gitflow Workflow工作流]]></title>
+      <url>http://ntscshen.com/2016/08/18/Workflow%E5%B7%A5%E4%BD%9C%E6%B5%81.html</url>
+      <content type="html"><![CDATA[<h3 id="分支类型和流程"><a href="#分支类型和流程" class="headerlink" title="分支类型和流程"></a>分支类型和流程</h3><p><img src="http://nvie.com/img/git-model@2x.png" alt="http://nvie.com/img/git-model@2x.png"></p>
+<h5 id="Commit-message的格式"><a href="#Commit-message的格式" class="headerlink" title="Commit message的格式"></a>Commit message的格式</h5><blockquote>
+<p>每次提交,Commit message 都包括三个部分：Header( 必须 )、Body( 可省略 )、Footer( 可省略 )</p>
+</blockquote>
+<h6 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h6><blockquote>
+<p>Header部分只有一行,包含三个字段</p>
+<ul>
+<li>type( 必须 )：类型<ul>
+<li>feat：新功能( <code>feature</code> )</li>
+<li>fix：修补Bug</li>
+<li>docs：文档( <code>documentation</code> )</li>
+<li>style：格式( 不影响代码运行的变动 )</li>
+<li>refactor：重构( 即不新增功能、也不是修改Bug的代码变动 )</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动</li>
+</ul>
+</li>
+<li>scope( 可选 )：范围( commit影响的范围，如数据层、控制层、视图层等 )</li>
+<li>subject( 必须 )：主题( commit目的的简短描述,不超过50个字符 )<ul>
+<li>第一个字母小写</li>
+<li>结尾不加句号(.)</li>
+<li>以动词开头、使用第一人称现在时</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 ]]></content>
     </entry>
     
@@ -2029,38 +2079,6 @@
 <p>注意此处不要一路回车,否则邮箱将覆盖上一次生成的ssh key,要给这个文件起个名字,例如 <code>id_rsa_GitLab</code> ,默认的是 <code>id_rsa</code> </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 在.ssh目录下的 添加gitLab配置项</div><div class="line"># gitLab</div><div class="line">Host xxx.xxx.cn</div><div class="line">User xxx@xxx.com</div><div class="line">Hostname xxx.xxx.cn</div><div class="line">PreferredAuthentications publickey</div><div class="line">IdentityFile ~/.ssh/id_rsa_GitLab</div></pre></td></tr></table></figure>
 <h5 id="测试是否连通"><a href="#测试是否连通" class="headerlink" title="测试是否连通"></a>测试是否连通</h5><p><img src="http://occeqxmsk.bkt.clouddn.com/082005.jpg" alt="http://occeqxmsk.bkt.clouddn.com/082005.jpg"></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[gitflow Workflow工作流]]></title>
-      <url>http://ntscshen.com/2016/08/18/Workflow%E5%B7%A5%E4%BD%9C%E6%B5%81.html</url>
-      <content type="html"><![CDATA[<h3 id="分支类型和流程"><a href="#分支类型和流程" class="headerlink" title="分支类型和流程"></a>分支类型和流程</h3><p><img src="http://nvie.com/img/git-model@2x.png" alt="http://nvie.com/img/git-model@2x.png"></p>
-<h5 id="Commit-message的格式"><a href="#Commit-message的格式" class="headerlink" title="Commit message的格式"></a>Commit message的格式</h5><blockquote>
-<p>每次提交,Commit message 都包括三个部分：Header( 必须 )、Body( 可省略 )、Footer( 可省略 )</p>
-</blockquote>
-<h6 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h6><blockquote>
-<p>Header部分只有一行,包含三个字段</p>
-<ul>
-<li>type( 必须 )：类型<ul>
-<li>feat：新功能( <code>feature</code> )</li>
-<li>fix：修补Bug</li>
-<li>docs：文档( <code>documentation</code> )</li>
-<li>style：格式( 不影响代码运行的变动 )</li>
-<li>refactor：重构( 即不新增功能、也不是修改Bug的代码变动 )</li>
-<li>test：增加测试</li>
-<li>chore：构建过程或辅助工具的变动</li>
-</ul>
-</li>
-<li>scope( 可选 )：范围( commit影响的范围，如数据层、控制层、视图层等 )</li>
-<li>subject( 必须 )：主题( commit目的的简短描述,不超过50个字符 )<ul>
-<li>第一个字母小写</li>
-<li>结尾不加句号(.)</li>
-<li>以动词开头、使用第一人称现在时</li>
-</ul>
-</li>
-</ul>
-</blockquote>
 ]]></content>
     </entry>
     
